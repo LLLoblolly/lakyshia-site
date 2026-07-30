@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Let's Connect | Lakyshia D. Godfrey</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0B140E;
+    --bg-deep:#060B08;
+    --bg-card:#132018;
+    --purple:#2B1B40;
+    --purple-light:#4A2F6B;
+    --gold:#C9A227;
+    --gold-soft:#E0C165;
+    --loblolly:#4F7A5C;
+    --sage:#8FAF95;
+    --text:#F2F5EF;
+    --text-muted:#A7BBAA;
+    --border:rgba(143,175,149,0.15);
+
+    --font-display:'Fraunces', serif;
+    --font-body:'DM Sans', sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  body{
+    font-family:var(--font-body);
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(79,122,92,0.18), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 90% 100%, rgba(74,47,107,0.22), transparent 60%),
+      var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  a{color:inherit;}
+
+  header{
+    max-width:640px;
+    margin:0 auto;
+    padding:3rem 1.5rem 1.5rem;
+    text-align:center;
+    width:100%;
+  }
+
+  .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:0.4rem;
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--sage);
+    text-decoration:none;
+    margin-bottom:2rem;
+  }
+  .back-link:hover{color:var(--gold-soft);}
+  .back-link svg{width:14px;height:14px;}
+
+  .eyebrow{
+    font-size:0.75rem;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    margin-bottom:0.9rem;
+  }
+
+  h1{
+    font-family:var(--font-display);
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(2rem, 5vw, 2.6rem);
+    color:var(--gold-soft);
+    margin-bottom:0.75rem;
+  }
+
+  header p{
+    color:var(--text-muted);
+    max-width:440px;
+    margin:0 auto;
+  }
+
+  main{
+    max-width:560px;
+    margin:0 auto;
+    padding:1rem 1.5rem 4rem;
+    width:100%;
+    flex:1;
+  }
+
+  form{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:2rem;
+    display:flex;
+    flex-direction:column;
+    gap:1.1rem;
+  }
+
+  label{
+    font-size:0.75rem;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--sage);
+    display:block;
+    margin-bottom:0.45rem;
+  }
+
+  input, textarea{
+    width:100%;
+    background:var(--bg-deep);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:0.8rem 1rem;
+    color:var(--text);
+    font-family:var(--font-body);
+    font-size:0.95rem;
+    resize:vertical;
+  }
+
+  input:focus, textarea:focus{
+    outline:none;
+    border-color:var(--gold);
+  }
+
+  textarea{min-height:140px;}
+
+  .submit-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:0.6rem;
+    background:linear-gradient(135deg, var(--gold), #A9821E);
+    color:#1B1204;
+    font-weight:700;
+    font-size:0.98rem;
+    padding:0.95rem 1.8rem;
+    border:none;
+    border-radius:999px;
+    cursor:pointer;
+    box-shadow:0 8px 26px rgba(201,162,39,0.28);
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top:0.5rem;
+  }
+
+  .submit-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 32px rgba(201,162,39,0.38);
+  }
+
+  .submit-btn svg{width:16px;height:16px;}
+
+  .fine-print{
+    margin-top:1.25rem;
+    font-size:0.78rem;
+    color:var(--text-muted);
+    text-align:center;
+  }
+
+  footer{
+    text-align:center;
+    padding:2rem 1.5rem;
+    color:var(--text-muted);
+    font-size:0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    Back to the Hub
+  </a>
+  <span class="eyebrow">Get in Touch</span>
+  <h1>Let's connect</h1>
+  <p>Have a question about a service, a booking, or one of the projects? Send a message below and it'll land straight in the inbox.</p>
+</header>
+
+<main>
+  <form action="https://formsubmit.co/mobilelaptoplifestyle@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="New message from lakyshiadgodfrey.com">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="true">
+
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="Name" required>
+    </div>
+
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="Email" required>
+    </div>
+
+    <div>
+      <label for="message">Message</label>
+      <textarea id="message" name="Message" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      Send message
+    </button>
+  </form>
+
+  <p class="fine-print">Powered by FormSubmit — no account or backend needed. The first message sent will trigger a one-time activation email to mobilelaptoplifestyle@gmail.com; after that's confirmed, every submission forwards automatically.</p>
+</main>
+
+<footer>
+  <p>&copy; 2026 Lakyshia D. Godfrey. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
