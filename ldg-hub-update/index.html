@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lakyshia D. Godfrey | A Polymath's Prism</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0B140E;
+    --bg-deep:#060B08;
+    --bg-card:#132018;
+    --bg-card-hover:#182A1F;
+    --purple:#2B1B40;
+    --purple-light:#4A2F6B;
+    --purple-pale:#6B4A94;
+    --gold:#C9A227;
+    --gold-soft:#E0C165;
+    --loblolly:#4F7A5C;
+    --sage:#8FAF95;
+    --text:#F2F5EF;
+    --text-muted:#A7BBAA;
+    --border:rgba(143,175,149,0.15);
+
+    --font-display:'Fraunces', serif;
+    --font-body:'DM Sans', sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:var(--font-body);
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:6.5rem;
+  }
+
+  a{color:inherit;}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:6rem 1.5rem 4rem;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% 0%, rgba(79,122,92,0.22), transparent 65%),
+      radial-gradient(ellipse 70% 50% at 85% 90%, rgba(74,47,107,0.28), transparent 60%),
+      linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 55%, var(--bg) 100%);
+  }
+
+  .hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background-image:
+      linear-gradient(rgba(143,175,149,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(143,175,149,0.05) 1px, transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent 75%);
+    pointer-events:none;
+  }
+
+  .eyebrow{
+    position:relative;
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:3.5px;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    margin-bottom:1.5rem;
+  }
+
+  .eyebrow::before, .eyebrow::after{
+    content:'◆';
+    font-size:0.5rem;
+    color:var(--purple-pale);
+    margin:0 0.75rem;
+    vertical-align:middle;
+  }
+
+  h1.name{
+    position:relative;
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:clamp(2.6rem, 7vw, 4.6rem);
+    line-height:1.08;
+    letter-spacing:-0.01em;
+  }
+
+  h1.name .last{
+    display:block;
+    font-style:italic;
+    font-weight:500;
+    color:var(--gold);
+    margin-top:0.1em;
+  }
+
+  .subtitle{
+    position:relative;
+    max-width:620px;
+    margin:1.75rem auto 2.5rem;
+    color:var(--text-muted);
+    font-size:1.08rem;
+  }
+
+  .cta{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:0.6rem;
+    background:linear-gradient(135deg, var(--gold), #A9821E);
+    color:#1B1204;
+    font-weight:700;
+    font-size:0.98rem;
+    padding:0.95rem 1.8rem;
+    border-radius:999px;
+    text-decoration:none;
+    box-shadow:0 8px 30px rgba(201,162,39,0.25);
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 34px rgba(201,162,39,0.35);
+  }
+
+  .cta svg{width:16px;height:16px;transition:transform 0.2s ease;}
+  .cta:hover svg{transform:translateY(2px);}
+
+  .scroll-hint{
+    position:relative;
+    margin-top:3.5rem;
+    font-size:0.75rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    opacity:0.7;
+  }
+
+  /* ============ SECTIONS ============ */
+  main{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 1.5rem;
+  }
+
+  .category{
+    padding:5rem 0 1rem;
+    scroll-margin-top:2rem;
+  }
+
+  .category-head{
+    display:flex;
+    align-items:baseline;
+    gap:1rem;
+    margin-bottom:2rem;
+  }
+
+  .category-icon{
+    width:38px;
+    height:38px;
+    flex-shrink:0;
+    border-radius:10px;
+    background:var(--purple);
+    border:1px solid var(--purple-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .category-icon svg{width:18px;height:18px;stroke:var(--gold-soft);}
+
+  .category-titles .eyebrow-sm{
+    display:block;
+    font-size:0.72rem;
+    font-weight:700;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--sage);
+    margin-bottom:0.2rem;
+  }
+
+  .category-titles h2{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:1.85rem;
+    color:var(--text);
+  }
+
+  .category-rule{
+    flex:1;
+    height:1px;
+    background:linear-gradient(90deg, var(--border), transparent);
+    align-self:center;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
+    gap:1.1rem;
+  }
+
+  .card{
+    position:relative;
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:1.5rem;
+    text-decoration:none;
+    color:inherit;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:170px;
+    overflow:hidden;
+    transition:border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+  }
+
+  .card::before{
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0;
+    height:3px;
+    background:var(--loblolly);
+    opacity:0.7;
+    transition:background 0.25s ease, opacity 0.25s ease;
+  }
+
+  .card.purple::before{background:var(--purple-light);}
+  .card.gold::before{background:var(--gold);}
+
+  .card:hover{
+    transform:translateY(-3px);
+    border-color:var(--sage);
+    background:var(--bg-card-hover);
+  }
+  .card:hover::before{opacity:1;}
+
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:0.75rem;
+    margin-bottom:0.6rem;
+  }
+
+  .card-title{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:1.18rem;
+  }
+
+  .card-tag{
+    font-size:0.68rem;
+    font-weight:700;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    padding:0.25rem 0.55rem;
+    border-radius:999px;
+    background:rgba(201,162,39,0.12);
+    color:var(--gold-soft);
+    white-space:nowrap;
+  }
+
+  .card-tag.soon{
+    background:rgba(74,47,107,0.25);
+    color:var(--purple-pale);
+  }
+
+  .card-desc{
+    font-size:0.92rem;
+    color:var(--text-muted);
+    margin-bottom:1.1rem;
+  }
+
+  .card-link{
+    font-weight:700;
+    font-size:0.86rem;
+    color:var(--sage);
+    display:flex;
+    align-items:center;
+    gap:0.4rem;
+  }
+  .card:hover .card-link{color:var(--gold-soft);}
+
+  /* Planner spotlight */
+  .planner-spotlight{
+    background:linear-gradient(135deg, rgba(74,47,107,0.35), rgba(19,32,24,0.9));
+    border:1px solid var(--purple-light);
+    border-radius:20px;
+    padding:2.25rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:1.5rem;
+    align-items:center;
+    justify-content:space-between;
+    text-decoration:none;
+  }
+  .planner-spotlight h3{
+    font-family:var(--font-display);
+    font-size:1.6rem;
+    margin-bottom:0.5rem;
+  }
+  .planner-spotlight p{
+    color:var(--text-muted);
+    max-width:420px;
+  }
+  .planner-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    background:var(--gold);
+    color:#1B1204;
+    font-weight:700;
+    padding:0.85rem 1.5rem;
+    border-radius:999px;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+
+  footer{
+    text-align:center;
+    padding:4rem 1.5rem 2rem;
+    color:var(--text-muted);
+    font-size:0.85rem;
+  }
+  footer a{color:var(--gold-soft);text-decoration:none;}
+
+  /* ============ CONNECT CARD ============ */
+  .connect-section{
+    padding:4rem 0 1rem;
+  }
+
+  .connect-card{
+    position:relative;
+    text-align:center;
+    padding:3.25rem 2rem;
+    border-radius:24px;
+    overflow:hidden;
+    background:linear-gradient(135deg, var(--purple) 0%, var(--bg-deep) 45%, var(--loblolly) 130%);
+    border:1px solid var(--purple-light);
+    box-shadow:0 20px 50px rgba(0,0,0,0.35);
+  }
+
+  .connect-card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:radial-gradient(ellipse 70% 60% at 50% 0%, rgba(201,162,39,0.10), transparent 70%);
+    pointer-events:none;
+  }
+
+  .connect-card h2{
+    position:relative;
+    font-family:var(--font-display);
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(1.7rem, 4vw, 2.3rem);
+    color:var(--gold-soft);
+    margin-bottom:0.9rem;
+  }
+
+  .connect-card p{
+    position:relative;
+    max-width:480px;
+    margin:0 auto 1.75rem;
+    color:var(--text);
+    opacity:0.9;
+  }
+
+  .connect-btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:0.6rem;
+    background:linear-gradient(135deg, var(--gold), #A9821E);
+    color:#1B1204;
+    font-weight:700;
+    font-size:0.98rem;
+    padding:0.95rem 1.9rem;
+    border-radius:999px;
+    text-decoration:none;
+    box-shadow:0 8px 26px rgba(201,162,39,0.3);
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .connect-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 32px rgba(201,162,39,0.4);
+  }
+
+  .connect-btn svg{width:17px;height:17px;}
+
+  @media (max-width:560px){
+    .connect-card{padding:2.5rem 1.5rem;}
+  }
+
+  /* ============ FLOATING PILL NAV ============ */
+  .pill-nav{
+    position:fixed;
+    left:50%;
+    bottom:1.5rem;
+    transform:translateX(-50%);
+    display:flex;
+    gap:0.25rem;
+    background:rgba(43,27,64,0.92);
+    backdrop-filter:blur(14px);
+    border:1px solid var(--purple-light);
+    border-radius:999px;
+    padding:0.4rem;
+    box-shadow:0 14px 40px rgba(0,0,0,0.45);
+    z-index:100;
+  }
+
+  .pill-nav a{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.2rem;
+    text-decoration:none;
+    color:var(--text-muted);
+    font-size:0.62rem;
+    font-weight:700;
+    letter-spacing:0.3px;
+    text-transform:uppercase;
+    padding:0.55rem 0.9rem;
+    border-radius:999px;
+    transition:background 0.2s ease, color 0.2s ease;
+    white-space:nowrap;
+  }
+
+  .pill-nav a svg{width:16px;height:16px;stroke:currentColor;fill:none;}
+
+  .pill-nav a:hover{color:var(--text);}
+
+  .pill-nav a.active{
+    background:var(--gold);
+    color:#1B1204;
+  }
+
+  @media (max-width:560px){
+    .pill-nav{gap:0.05rem;padding:0.35rem;}
+    .pill-nav a{padding:0.5rem 0.6rem;font-size:0.56rem;}
+    .planner-spotlight{padding:1.5rem;}
+    body{padding-bottom:5.5rem;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <span class="eyebrow">A Polymath's Prism</span>
+  <h1 class="name">Lakyshia D.<span class="last">Godfrey</span></h1>
+  <p class="subtitle">Welcome! Whether we've connected in person or you're exploring new possibilities, discover my professional services, creative spaces, and projects below.</p>
+  <a href="#services" class="cta">
+    Enter the Discovery Hub
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </a>
+  <span class="scroll-hint">Scroll to explore</span>
+</section>
+
+<main>
+
+  <!-- ============ PROFESSIONAL SERVICES ============ -->
+  <section class="category" id="services">
+    <div class="category-head">
+      <div class="category-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l-3 5a4 4 0 0 0 8 0l-3-5H5zM19 8l-3 5a4 4 0 0 0 8 0l-3-5h-2z"/><path d="M5 8h4M15 8h4M9 3h6"/></svg>
+      </div>
+      <div class="category-titles">
+        <span class="eyebrow-sm">Trusted &amp; Credentialed</span>
+        <h2>Professional Services</h2>
+      </div>
+      <div class="category-rule"></div>
+    </div>
+
+    <div class="grid">
+      <a href="https://lllloblollymultiservices.com/" target="_blank" rel="noopener" class="card">
+        <div>
+          <div class="card-top">
+            <span class="card-title">Insurance</span>
+            <span class="card-tag">Loblolly</span>
+          </div>
+          <p class="card-desc">Comprehensive coverage and multi-service insurance solutions tailored for protection.</p>
+        </div>
+        <span class="card-link">Visit Loblolly Services &rarr;</span>
+      </a>
+
+      <a href="https://www.hrblock.com/tax-pro-details/960740/39134/" target="_blank" rel="noopener" class="card purple">
+        <div>
+          <div class="card-top">
+            <span class="card-title">Tax Preparation</span>
+            <span class="card-tag">H&amp;R Block</span>
+          </div>
+          <p class="card-desc">Expert, reliable tax assistance directly through my professional tax pro portal.</p>
+        </div>
+        <span class="card-link">View Tax Profile &rarr;</span>
+      </a>
+
+      <a href="https://notarymom.com/" target="_blank" rel="noopener" class="card gold">
+        <div>
+          <div class="card-top">
+            <span class="card-title">Notary Services</span>
+            <span class="card-tag">Notary Mom</span>
+          </div>
+          <p class="card-desc">Prompt and professional mobile &amp; online notary services when you need them.</p>
+        </div>
+        <span class="card-link">Get Documents Notarized &rarr;</span>
+      </a>
+
+      <a href="https://lllloblollymultiservices.com/study/" target="_blank" rel="noopener" class="card">
+        <div>
+          <div class="card-top">
+            <span class="card-title">Study Hub</span>
+            <span class="card-tag">Loblolly</span>
+          </div>
+          <p class="card-desc">Life &amp; health insurance exam-prep tracks &mdash; day-by-day study plans built for licensing exams.</p>
+        </div>
+        <span class="card-link">Start Studying &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ EARTH & LEGACY ============ -->
+  <section class="category" id="homestead">
+    <div class="category-head">
+      <div class="category-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13V8a5 5 0 0 1 5-5c1 3 2 5 2 8s-1 5-2 8"/><path d="M15 20a7 7 0 0 0 7-7v-5a5 5 0 0 0-5-5c-1 3-2 5-2 8s1 5 2 8"/></svg>
+      </div>
+      <div class="category-titles">
+        <span class="eyebrow-sm">Rooted &amp; Growing</span>
+        <h2>Earth &amp; Legacy</h2>
+      </div>
+      <div class="category-rule"></div>
+    </div>
+
+    <div class="grid">
+      <a href="lifeskills-homestead.html" class="card gold">
+        <div>
+          <div class="card-top">
+            <span class="card-title">LifeSkills Homestead</span>
+            <span class="card-tag soon">Coming Soon</span>
+          </div>
+          <p class="card-desc">Practical self-sufficiency, traditional skills, and modern homestead education.</p>
+        </div>
+        <span class="card-link">Learn More &rarr;</span>
+      </a>
+
+      <a href="https://earth-2-table.blogspot.com/" target="_blank" rel="noopener" class="card">
+        <div>
+          <div class="card-top">
+            <span class="card-title">Earth-2-Table Farm</span>
+            <span class="card-tag">Blog</span>
+          </div>
+          <p class="card-desc">Growing journey, sustainable living, and fresh farm-to-table updates.</p>
+        </div>
+        <span class="card-link">Visit Farm Blog &rarr;</span>
+      </a>
+
+      <a href="https://freyhomeschool.blogspot.com/?m=1" target="_blank" rel="noopener" class="card">
+        <div>
+          <div class="card-top">
+            <span class="card-title">Frey Homeschool</span>
+            <span class="card-tag">Education</span>
+          </div>
+          <p class="card-desc">Resources, stories, and insights from our family's homeschooling lifestyle.</p>
+        </div>
+        <span class="card-link">Explore Homeschooling &rarr;</span>
+      </a>
+
+      <a href="http://empressgdesignsjewelry.blogspot.com/" target="_blank" rel="noopener" class="card purple">
+        <div>
+          <div class="card-top">
+            <span class="card-title">Empress G Designs</span>
+            <span class="card-tag">Jewelry</span>
+          </div>
+          <p class="card-desc">Handcrafted beading, custom artisan jewelry, and creative designs.</p>
+        </div>
+        <span class="card-link">View Beadwork &rarr;</span>
+      </a>
+
+      <a href="lsa_cooking_homestead.html" class="card gold">
+        <div>
+          <div class="card-top">
+            <span class="card-title">Cooking &amp; Homestead</span>
+            <span class="card-tag">LSA</span>
+          </div>
+          <p class="card-desc">Godfrey Life Skills Academy's guide to growing it and cooking it &mdash; Zone 8b kitchen &amp; garden know-how.</p>
+        </div>
+        <span class="card-link">Explore Cooking &amp; Homestead &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ DIGITAL UNIVERSE ============ -->
+  <section class="category" id="universe">
+    <div class="category-head">
+      <div class="category-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+      </div>
+      <div class="category-titles">
+        <span class="eyebrow-sm">Media, Craft &amp; Commerce</span>
+        <h2>Digital Universe</h2>
+      </div>
+      <div class="category-rule"></div>
+    </div>
+
+    <div class="grid">
+      <a href="https://lakyshia.wordpress.com/" target="_blank" rel="noopener" class="card purple">
+        <div>
+          <div class="card-top">
+            <span class="card-title">Official Blog</span>
+            <span class="card-tag">Thoughts</span>
+          </div>
+          <p class="card-desc">Insights, updates, commentary, and personal writings.</p>
+        </div>
+        <span class="card-link">Read Blog &rarr;</span>
+      </a>
+
+      <a href="/actress" class="card">
+        <div>
+          <div class="card-top">
+            <span class="card-title">Acting &amp; Media</span>
+            <span class="card-tag">IMDb</span>
+          </div>
+          <p class="card-desc">Film, theatrical pursuits, performance portfolio, and credits.</p>
+        </div>
+        <span class="card-link">View Acting Page &rarr;</span>
+      </a>
+
+      <a href="godgib-creative.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="card-title">GodGib Creative</span>
+            <span class="card-tag">Music</span>
+          </div>
+          <p class="card-desc">Original music, voiceovers, affirmations, and short-form content across every discipline.</p>
+        </div>
+        <span class="card-link">Enter the Studio &rarr;</span>
+      </a>
+
+      <a href="membership.html" class="card purple">
+        <div>
+          <div class="card-top">
+            <span class="card-title">Membership</span>
+            <span class="card-tag">Circle</span>
+          </div>
+          <p class="card-desc">Join the private community for homesteading and education-hearted learning, year-round.</p>
+        </div>
+        <span class="card-link">Join the Circle &rarr;</span>
+      </a>
+
+      <a href="https://www.isaveshoppingonline.com" target="_blank" rel="noopener" class="card gold">
+        <div>
+          <div class="card-top">
+            <span class="card-title">iSave Shopping</span>
+            <span class="card-tag">Shop</span>
+          </div>
+          <p class="card-desc">Curated deals, online shopping finds, and lifestyle recommendations.</p>
+        </div>
+        <span class="card-link">Start Shopping &rarr;</span>
+      </a>
+
+      <a href="https://www.domainsearchusa.com" target="_blank" rel="noopener" class="card">
+        <div>
+          <div class="card-top">
+            <span class="card-title">Domain Search USA</span>
+            <span class="card-tag">Domains</span>
+          </div>
+          <p class="card-desc">Find and secure your brand's next domain name effortlessly.</p>
+        </div>
+        <span class="card-link">Search Domains &rarr;</span>
+      </a>
+
+      <a href="products.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="card-title">Products Store</span>
+            <span class="card-tag">Store</span>
+          </div>
+          <p class="card-desc">Explore direct products, educational guides, and digital downloads.</p>
+        </div>
+        <span class="card-link">Browse Store &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ PLANNER ============ -->
+  <section class="category" id="planner">
+    <div class="category-head">
+      <div class="category-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+      </div>
+      <div class="category-titles">
+        <span class="eyebrow-sm">Stay Organized</span>
+        <h2>Planner Universe</h2>
+      </div>
+      <div class="category-rule"></div>
+    </div>
+
+    <a href="/planner-universe" class="planner-spotlight">
+      <div>
+        <h3>PlannerUniverse</h3>
+        <p>Custom calendars, planning tools, and organizational resources built to keep every part of the prism running smoothly.</p>
+      </div>
+      <span class="planner-cta">
+        Open Planner Hub
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </span>
+    </a>
+  </section>
+
+  <!-- ============ LET'S CONNECT ============ -->
+  <section class="connect-section" id="connect">
+    <div class="connect-card">
+      <h2>Let's connect</h2>
+      <p>Have a question about a service, a booking, or one of the projects? Reach out any time.</p>
+      <a href="contact.html" class="connect-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Send a message
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Lakyshia D. Godfrey. All rights reserved.</p>
+  <p style="margin-top:0.4rem;"><a href="https://lakyshiadgodfrey.com">lakyshiadgodfrey.com</a></p>
+</footer>
+
+<!-- ============ FLOATING PILL NAV ============ -->
+<nav class="pill-nav" id="pillNav">
+  <a href="#home" data-section="home">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Home
+  </a>
+  <a href="#services" data-section="services">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l-3 5a4 4 0 0 0 8 0l-3-5H5zM19 8l-3 5a4 4 0 0 0 8 0l-3-5h-2z"/></svg>
+    Services
+  </a>
+  <a href="#homestead" data-section="homestead">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13V8a5 5 0 0 1 5-5c1 3 2 5 2 8s-1 5-2 8"/></svg>
+    Homestead
+  </a>
+  <a href="#universe" data-section="universe">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+    Universe
+  </a>
+  <a href="#planner" data-section="planner">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+    Planner
+  </a>
+</nav>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.pill-nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.dataset.section === id);
+        });
+      }
+    });
+  }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
