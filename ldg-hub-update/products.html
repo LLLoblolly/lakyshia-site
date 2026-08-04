@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Products | Lakyshia D. Godfrey</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0B140E;
+    --bg-deep:#060B08;
+    --bg-card:#132018;
+    --bg-card-hover:#182A1F;
+    --purple:#2B1B40;
+    --purple-light:#4A2F6B;
+    --gold:#C9A227;
+    --gold-soft:#E0C165;
+    --loblolly:#4F7A5C;
+    --sage:#8FAF95;
+    --text:#F2F5EF;
+    --text-muted:#A7BBAA;
+    --border:rgba(143,175,149,0.15);
+
+    --font-display:'Fraunces', serif;
+    --font-body:'DM Sans', sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  body{
+    font-family:var(--font-body);
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(79,122,92,0.18), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 90% 100%, rgba(74,47,107,0.22), transparent 60%),
+      var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:4rem;
+  }
+
+  a{color:inherit;}
+
+  .topbar{
+    max-width:1120px;
+    margin:0 auto;
+    padding:1.75rem 1.5rem 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:0.4rem;
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--sage);
+    text-decoration:none;
+  }
+  .back-link:hover{color:var(--gold-soft);}
+  .back-link svg{width:14px;height:14px;}
+
+  main{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 1.5rem;
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    text-align:center;
+    padding:3.5rem 0 3rem;
+  }
+
+  .eyebrow{
+    display:inline-block;
+    font-size:0.75rem;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    margin-bottom:1.1rem;
+  }
+
+  h1{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:clamp(2.3rem, 6vw, 3.2rem);
+    margin-bottom:1rem;
+  }
+
+  h1 em{font-style:italic;color:var(--gold);}
+
+  .hero p{
+    color:var(--text-muted);
+    max-width:560px;
+    margin:0 auto;
+    font-size:1.02rem;
+  }
+
+  /* ============ SECTION HEAD ============ */
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:1rem;
+    margin:3.5rem 0 1.75rem;
+  }
+
+  .section-head h2{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:1.6rem;
+    white-space:nowrap;
+  }
+
+  .section-rule{
+    flex:1;
+    height:1px;
+    background:linear-gradient(90deg, var(--border), transparent);
+  }
+
+  /* ============ PRODUCT GRID ============ */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
+    gap:1.1rem;
+  }
+
+  .card{
+    position:relative;
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:1.5rem;
+    text-decoration:none;
+    color:inherit;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:180px;
+    overflow:hidden;
+    transition:border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+  }
+
+  .card::before{
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0;
+    height:3px;
+    background:var(--loblolly);
+    opacity:0.7;
+    transition:background 0.25s ease, opacity 0.25s ease;
+  }
+
+  .card.purple::before{background:var(--purple-light);}
+  .card.gold::before{background:var(--gold);}
+
+  .card:hover{
+    transform:translateY(-3px);
+    border-color:var(--sage);
+    background:var(--bg-card-hover);
+  }
+  .card:hover::before{opacity:1;}
+
+  .card.disabled{cursor:default;}
+  .card.disabled:hover{transform:none;border-color:var(--border);background:var(--bg-card);}
+
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:0.75rem;
+    margin-bottom:0.6rem;
+  }
+
+  .card-icon{
+    width:36px;
+    height:36px;
+    flex-shrink:0;
+    border-radius:10px;
+    background:var(--purple);
+    border:1px solid var(--purple-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .card-icon svg{width:17px;height:17px;stroke:var(--gold-soft);}
+
+  .card-tag{
+    font-size:0.66rem;
+    font-weight:700;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    padding:0.25rem 0.55rem;
+    border-radius:999px;
+    background:rgba(201,162,39,0.12);
+    color:var(--gold-soft);
+    white-space:nowrap;
+  }
+
+  .card-tag.soon{
+    background:rgba(74,47,107,0.25);
+    color:#C7B3E8;
+  }
+
+  .card-title{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:1.1rem;
+    margin:0.6rem 0 0.4rem;
+  }
+
+  .card-desc{
+    font-size:0.87rem;
+    color:var(--text-muted);
+    margin-bottom:1rem;
+  }
+
+  .card-link{
+    font-weight:700;
+    font-size:0.83rem;
+    color:var(--sage);
+    display:flex;
+    align-items:center;
+    gap:0.4rem;
+  }
+  .card:hover .card-link{color:var(--gold-soft);}
+
+  .card-note{
+    font-size:0.78rem;
+    color:var(--text-muted);
+    font-style:italic;
+  }
+
+  footer{
+    text-align:center;
+    padding:4rem 1.5rem 0;
+    color:var(--text-muted);
+    font-size:0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    Back to the Hub
+  </a>
+</div>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <span class="eyebrow">The Shop</span>
+    <h1>Tools built from <em>real seasons</em></h1>
+    <p>Trackers, references, and remedies built the same way everything else here is — tested first, shared second. Some are ready now. Others are still growing.</p>
+  </section>
+
+  <!--
+    TO-DO — Product pages still to be built (in priority order):
+    1. Body Butter
+    2. Hair Tea
+    3. Meal Planner (dedicated page — currently only exists as a membership perk)
+    4. Herb & Spice Labels (proper sales page, replacing the raw printable collection)
+    Each gets added back to the "Available Now" grid below once its page exists.
+  -->
+
+  <!-- ============ AVAILABLE NOW ============ -->
+  <div class="section-head">
+    <h2>Available Now</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="grid">
+
+    <a href="field-ledger.html" class="card">
+      <div>
+        <div class="card-top">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <span class="card-tag">Google Sheets</span>
+        </div>
+        <h3 class="card-title">The Field Ledger</h3>
+        <p class="card-desc">A done-for-you Schedule C income &amp; expense tracker for the self-employed, the gig worker, and the grower. One-time access, yours to keep.</p>
+      </div>
+      <span class="card-link">Get the Ledger &rarr;</span>
+    </a>
+
+    <a href="tea-green-leaves.html" class="card">
+      <div>
+        <div class="card-top">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+          </div>
+          <span class="card-tag">Tea Blend</span>
+        </div>
+        <h3 class="card-title">Green Leaves Herbal Tea</h3>
+        <p class="card-desc">A hand-crafted blend of green tea, yerba maté, moringa &amp; nettle — full ingredient breakdown and brew guide.</p>
+      </div>
+      <span class="card-link">View the Blend &rarr;</span>
+    </a>
+
+    <a href="mileage-log.html" class="card">
+      <div>
+        <div class="card-top">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2"/><path d="m19 9 4 3-4 3"/></svg>
+          </div>
+          <span class="card-tag">Google Sheets</span>
+        </div>
+        <h3 class="card-title">The Mileage Log</h3>
+        <p class="card-desc">A standalone business mileage tracker — dates, purpose, and miles logged in one clean Google Sheet, ready for tax time.</p>
+      </div>
+      <span class="card-link">Get the Mileage Log &rarr;</span>
+    </a>
+
+  </div>
+
+  <!-- ============ COMING SOON ============ -->
+  <div class="section-head">
+    <h2>Coming Soon</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="grid">
+
+    <div class="card disabled purple">
+      <div>
+        <div class="card-top">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+          </div>
+          <span class="card-tag soon">In Progress</span>
+        </div>
+        <h3 class="card-title">Emoji Almanac</h3>
+        <p class="card-desc">A playful, visual take on the almanac — planting windows, moon phases, and seasonal notes told in emoji shorthand.</p>
+      </div>
+      <span class="card-note">In development</span>
+    </div>
+
+    <div class="card disabled purple">
+      <div>
+        <div class="card-top">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>
+          </div>
+          <span class="card-tag soon">In Progress</span>
+        </div>
+        <h3 class="card-title">Homestead Planner</h3>
+        <p class="card-desc">A dedicated planning system for the homestead — animals, garden beds, preserving schedules, and seasonal chores in one place.</p>
+      </div>
+      <span class="card-note">In development</span>
+    </div>
+
+    <div class="card disabled purple">
+      <div>
+        <div class="card-top">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          </div>
+          <span class="card-tag soon">In Progress</span>
+        </div>
+        <h3 class="card-title">Planner Customization</h3>
+        <p class="card-desc">Build-your-own planner pages — mix and match sections from the existing collections to fit exactly how you plan.</p>
+      </div>
+      <span class="card-note">In development</span>
+    </div>
+
+    <div class="card purple">
+      <div>
+        <div class="card-top">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          </div>
+          <span class="card-tag soon">Exploring</span>
+        </div>
+        <h3 class="card-title">Site Planning</h3>
+        <p class="card-desc">Website &amp; digital setup help for other small business owners — from purchasing the right domain name to mapping out the site itself. Still shaping what this offer looks like.</p>
+      </div>
+      <a href="https://www.domainsearchusa.com" target="_blank" rel="noopener" class="card-link">Search Domains at Domain Search USA &rarr;</a>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Lakyshia D. Godfrey. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

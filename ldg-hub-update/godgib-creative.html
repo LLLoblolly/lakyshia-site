@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GodGib Creative — Music · Acting · Voiceovers · Affirmations · Shorts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --plum:#211026;
+    --plum-deep:#170B1B;
+    --card:#2B1633;
+    --cream:#F4ECE2;
+    --gold:#D9A441;
+    --coral:#E8735C;
+    --lavender:#9C8AA8;
+    --line:rgba(244,236,226,0.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+  body{
+    background:var(--plum);
+    color:var(--cream);
+    font-family:'Work Sans',sans-serif;
+    line-height:1.6;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 28px;}
+  ::selection{ background:var(--gold); color:var(--plum-deep); }
+
+  /* NAV */
+  header.top{
+    position:sticky; top:0; z-index:60;
+    background:rgba(23,11,27,0.85); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:18px 28px; max-width:1100px; margin:0 auto; }
+  .brand{
+    font-family:'Fraunces',serif; font-weight:600; font-size:21px; letter-spacing:0.01em;
+    text-decoration:none; color:var(--cream);
+  }
+  .brand em{ font-style:italic; color:var(--gold); }
+  nav.mainnav{ display:flex; gap:28px; }
+  nav.mainnav a{
+    font-family:'Space Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.1em;
+    text-decoration:none; color:var(--lavender); border-bottom:1px solid transparent; padding-bottom:3px;
+    transition:color .2s ease, border-color .2s ease;
+  }
+  nav.mainnav a:hover{ color:var(--gold); border-color:var(--gold); }
+
+  /* HERO */
+  .hero{ padding:96px 0 70px; position:relative; overflow:hidden; }
+  .hero .wrap{ position:relative; z-index:2; }
+  .eyebrow{
+    font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--coral); display:block; margin-bottom:22px;
+  }
+  .hero h1{
+    font-family:'Fraunces',serif; font-weight:700; font-size:clamp(46px,7.5vw,92px);
+    line-height:0.98; letter-spacing:-0.01em; max-width:14ch; margin-bottom:26px;
+  }
+  .hero h1 .it{ font-style:italic; font-weight:500; color:var(--gold); }
+  .hero p.lede{ font-size:18px; color:var(--lavender); max-width:48ch; margin-bottom:40px; }
+
+  /* equalizer signature */
+  .eq{ display:flex; align-items:flex-end; gap:6px; height:120px; margin-bottom:8px; }
+  .eq .bar{
+    flex:1; background:linear-gradient(180deg, var(--gold), var(--coral));
+    border-radius:3px 3px 0 0;
+    animation:pulse 2.4s ease-in-out infinite;
+    transform-origin:bottom;
+  }
+  .eq .bar:nth-child(1){height:38%; animation-delay:0s;}
+  .eq .bar:nth-child(2){height:72%; animation-delay:0.15s;}
+  .eq .bar:nth-child(3){height:50%; animation-delay:0.3s;}
+  .eq .bar:nth-child(4){height:95%; animation-delay:0.45s;}
+  .eq .bar:nth-child(5){height:60%; animation-delay:0.6s;}
+  .eq .bar:nth-child(6){height:80%; animation-delay:0.75s;}
+  .eq .bar:nth-child(7){height:44%; animation-delay:0.9s;}
+  .eq .bar:nth-child(8){height:68%; animation-delay:1.05s;}
+  .eq .bar:nth-child(9){height:30%; animation-delay:1.2s;}
+  .eq .bar:nth-child(10){height:85%; animation-delay:1.35s;}
+  .eq .bar:nth-child(11){height:55%; animation-delay:1.5s;}
+  .eq .bar:nth-child(12){height:40%; animation-delay:1.65s;}
+  @keyframes pulse{
+    0%,100%{ transform:scaleY(0.9); opacity:0.85; }
+    50%{ transform:scaleY(1.15); opacity:1; }
+  }
+  .eq-labels{
+    display:flex; justify-content:space-between; font-family:'Space Mono',monospace;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--lavender);
+    border-top:1px solid var(--line); padding-top:12px;
+  }
+
+  section{ padding:80px 0; border-bottom:1px solid var(--line); }
+  section:last-of-type{ border-bottom:none; }
+  .section-head{ margin-bottom:44px; max-width:60ch; }
+  .section-head .tag{
+    font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--coral); display:block; margin-bottom:14px;
+  }
+  .section-head h2{
+    font-family:'Fraunces',serif; font-weight:700; font-size:clamp(30px,4vw,44px); letter-spacing:-0.01em;
+  }
+  .section-head p{ color:var(--lavender); margin-top:14px; font-size:15.5px; }
+
+  /* DISCIPLINES */
+  .disc-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .disc{ background:var(--plum); padding:30px 22px; transition:background .25s ease; }
+  .disc:hover{ background:var(--card); }
+  .disc .n{ font-family:'Space Mono',monospace; color:var(--gold); font-size:12px; margin-bottom:18px; display:block; }
+  .disc h3{ font-family:'Fraunces',serif; font-weight:600; font-size:20px; margin-bottom:10px; }
+  .disc p{ font-size:13.5px; color:var(--lavender); }
+
+  /* VOICE / ABOUT */
+  .about{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:center; }
+  .about-mark{
+    font-family:'Fraunces',serif; font-style:italic; font-weight:500;
+    font-size:clamp(28px,3.4vw,40px); line-height:1.3; color:var(--cream);
+    border-left:2px solid var(--gold); padding-left:28px;
+  }
+  .about-mark span{ color:var(--gold); font-style:normal; font-weight:700; }
+  .about-copy p{ color:var(--lavender); font-size:15.5px; margin-bottom:16px; max-width:52ch; }
+
+  /* WORK REEL */
+  .reel-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .reel-card{
+    background:var(--card); border:1px solid var(--line); padding:0; overflow:hidden; aspect-ratio:9/12;
+    position:relative; display:flex; align-items:flex-end;
+  }
+  .reel-card .glow{
+    position:absolute; inset:0;
+    background:radial-gradient(circle at 30% 20%, rgba(217,164,65,0.25), transparent 60%);
+  }
+  .reel-card .tag{
+    position:relative; z-index:2; padding:20px;
+    font-family:'Space Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold);
+  }
+  .reel-card .ttl{
+    position:relative; z-index:2; padding:0 20px 20px;
+    font-family:'Fraunces',serif; font-weight:600; font-size:19px; color:var(--cream);
+  }
+
+  /* CONTACT */
+  .contact-band{
+    background:var(--card); border:1px solid var(--line); padding:56px;
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:center;
+  }
+  .contact-band h2{ font-family:'Fraunces',serif; font-weight:700; font-size:clamp(28px,3.6vw,40px); margin-bottom:16px; }
+  .contact-band p{ color:var(--lavender); font-size:15.5px; max-width:48ch; }
+  .contact-list{ list-style:none; }
+  .contact-list li{ display:flex; justify-content:space-between; padding:14px 0; border-bottom:1px solid var(--line); font-size:14.5px; }
+  .contact-list li span:first-child{ font-family:'Space Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--lavender); }
+  .contact-list li span:last-child{ font-weight:500; }
+  .cta-btn{
+    display:inline-block; margin-top:22px; padding:14px 28px;
+    background:var(--gold); color:var(--plum-deep); text-decoration:none;
+    font-family:'Space Mono',monospace; font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase;
+    border-radius:2px; transition:background .2s ease, transform .2s ease;
+  }
+  .cta-btn:hover{ background:var(--coral); transform:translateY(-1px); }
+
+  footer{ padding:36px 0; font-family:'Space Mono',monospace; font-size:11.5px; color:var(--lavender); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+
+  @media (max-width:900px){
+    nav.mainnav{ display:none; }
+    .disc-grid{ grid-template-columns:repeat(2,1fr); }
+    .about{ grid-template-columns:1fr; }
+    .reel-grid{ grid-template-columns:1fr 1fr; }
+    .contact-band{ grid-template-columns:1fr; padding:32px; }
+  }
+  @media (max-width:560px){
+    .disc-grid{ grid-template-columns:1fr; }
+    .reel-grid{ grid-template-columns:1fr; }
+    .eq{ height:80px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topbar">
+    <a href="#top" class="brand">GodGib <em>Creative</em></a>
+    <nav class="mainnav">
+      <a href="#disciplines">Work</a>
+      <a href="#about">Voice</a>
+      <a href="#reel">Reel</a>
+      <a href="#contact">Book</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Music · Acting · Voiceovers · Affirmations · Shorts</span>
+    <h1>Every tone <span class="it">carries</span> a purpose.</h1>
+    <p class="lede">GodGib Creative is a one-source studio for original music, screen &amp; voice acting, affirmations, and short-form content built to move people.</p>
+    <div class="eq" aria-hidden="true">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    </div>
+    <div class="eq-labels">
+      <span>Music</span><span>Acting</span><span>Voiceovers</span><span>Affirmations</span><span>Shorts</span>
+    </div>
+  </div>
+</section>
+
+<section id="disciplines">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">What I Do</span>
+      <h2>Five disciplines, one voice.</h2>
+      <p>Each service is built to stand alone or work together — a script that becomes a voiceover, a beat that becomes a short, an affirmation that becomes a series.</p>
+    </div>
+    <div class="disc-grid">
+      <div class="disc">
+        <span class="n">01</span>
+        <h3>Music</h3>
+        <p>Original production, beats, and vocal recording across genres.</p>
+      </div>
+      <div class="disc">
+        <span class="n">02</span>
+        <h3>Acting</h3>
+        <p>On-camera and dramatic performance for film, web series, and commercial work.</p>
+      </div>
+      <div class="disc">
+        <span class="n">03</span>
+        <h3>Voiceovers</h3>
+        <p>Commercial, narration, character, and IVR voice work, delivered broadcast-ready.</p>
+      </div>
+      <div class="disc">
+        <span class="n">04</span>
+        <h3>Affirmations</h3>
+        <p>Spoken-word affirmation audio for mindfulness apps, wellness brands, and personal practice.</p>
+      </div>
+      <div class="disc">
+        <span class="n">05</span>
+        <h3>Shorts</h3>
+        <p>Faceless and on-camera short-form video for TikTok, Reels, and YouTube Shorts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="about-mark">
+      "The <span>voice</span> is the instrument. Everything else is arrangement."
+    </div>
+    <div class="about-copy">
+      <p>GodGib Creative exists at the intersection of performance and production — where a script, a beat, and a message all pass through the same instrument: the voice.</p>
+      <p>Whether the work is a 30-second affirmation, a fully produced track, or a character read for a casting call, every piece is built with the same standard: clean, intentional, ready to use.</p>
+    </div>
+  </div>
+</section>
+
+<section id="reel">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Selected Work</span>
+      <h2>The reel.</h2>
+      <p>A sample of recent work across disciplines — full reel available on request.</p>
+    </div>
+    <div class="reel-grid">
+      <div class="reel-card"><div class="glow"></div><span class="tag">Voiceover</span><span class="ttl">Brand Narration Spot</span></div>
+      <div class="reel-card"><div class="glow"></div><span class="tag">Music</span><span class="ttl">Original Score Sample</span></div>
+      <div class="reel-card"><div class="glow"></div><span class="tag">Shorts</span><span class="ttl">Affirmation Series, Ep. 3</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-band">
+      <div>
+        <h2>Let's build the sound.</h2>
+        <p>Booking for music production, voiceover sessions, acting reels, affirmation series, and short-form content. Reach out with the project scope and timeline.</p>
+        <a href="mailto:hello@godgibcreative.com" class="cta-btn">Start a Project</a>
+      </div>
+      <ul class="contact-list">
+        <li><span>Email</span><span>hello@godgibcreative.com</span></li>
+        <li><span>Booking Window</span><span>2–3 weeks out</span></li>
+        <li><span>Turnaround</span><span>3–5 business days</span></li>
+        <li><span>Based In</span><span>South Carolina</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>GODGIB CREATIVE</span>
+    <span>MUSIC · ACTING · VOICEOVERS · AFFIRMATIONS · SHORTS</span>
+  </div>
+</footer>
+
+</body>
+</html>
