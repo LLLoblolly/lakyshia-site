@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Hub — L&amp;L Loblolly Multi Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#1C3A2A;
+    --loblolly:#24422F;
+    --loblolly-line:#3F5C43;
+    --sage:#8FA98A;
+    --gold:#C49A3C;
+    --cream:#F3EFE4;
+    --cream-dim:#C7D2C1;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 15% 0%, rgba(143,169,138,0.14), transparent 45%),
+      radial-gradient(circle at 85% 15%, rgba(196,154,60,0.10), transparent 40%),
+      var(--forest);
+    color:var(--cream);
+    font-family:'DM Sans', sans-serif;
+    line-height:1.5;
+  }
+  header{
+    max-width:760px;
+    margin:0 auto;
+    padding:64px 24px 20px;
+    text-align:center;
+  }
+  .eyebrow{
+    font-family:'DM Mono', monospace;
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(32px,6vw,50px);
+    margin:14px 0 12px;
+    letter-spacing:-0.01em;
+  }
+  header p{color:var(--cream-dim);font-size:16px;max-width:460px;margin:0 auto;}
+
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding:24px 24px 80px;
+    display:grid;
+    gap:18px;
+  }
+
+  .track{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    background:var(--loblolly);
+    border:1px solid var(--loblolly-line);
+    border-radius:14px;
+    padding:24px 26px;
+    text-decoration:none;
+    color:var(--cream);
+    transition:border-color .2s, transform .2s;
+  }
+  a.track:hover{border-color:var(--gold); transform:translateY(-2px);}
+
+  .track .tag{
+    font-family:'DM Mono', monospace;
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--sage);
+    display:block;
+    margin-bottom:6px;
+  }
+  .track h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:22px;
+    margin:0 0 6px;
+  }
+  .track p{margin:0;font-size:14px;color:var(--cream-dim);}
+
+  .status{
+    font-family:'DM Mono', monospace;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:5px 12px;
+    border-radius:20px;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .status.live{background:var(--gold); color:var(--forest);}
+  .status.soon{
+    background:transparent;
+    border:1px solid var(--loblolly-line);
+    color:var(--cream-dim);
+  }
+
+  .arrow{
+    flex-shrink:0;
+    width:20px;height:20px;
+    color:var(--gold);
+    transition:transform .2s;
+  }
+  a.track:hover .arrow{transform:translateX(4px);}
+
+  .track.disabled{
+    opacity:.7;
+    cursor:default;
+  }
+  .track.disabled:hover{border-color:var(--loblolly-line); transform:none;}
+
+  .track-right{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-shrink:0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">L&amp;L Loblolly Multi Services</div>
+  <h1>Study Hub</h1>
+  <p>Structured exam-prep tracks for licensing and certification. Pick a subject, work the plan day by day.</p>
+</header>
+
+<main>
+  <a class="track" href="/study/insurance/life/">
+    <div>
+      <span class="tag">Insurance &middot; 10 Days</span>
+      <h2>Life Insurance Exam Sprint</h2>
+      <p>Foundations through South Carolina state law, day by day.</p>
+    </div>
+    <div class="track-right">
+      <span class="status live">Start now</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </div>
+  </a>
+
+  <a class="track" href="/study/insurance/health/">
+    <div>
+      <span class="tag">Insurance &middot; 45 Days</span>
+      <h2>Health Insurance Exam Sprint</h2>
+      <p>The Big 5, federal law, Medicare &amp; Medicaid, group plans, and more — with calendar and video support.</p>
+    </div>
+    <div class="track-right">
+      <span class="status live">Start now</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </div>
+  </a>
+</main>
+
+</body>
+</html>
