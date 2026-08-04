@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Field Ledger — L&L Loblolly Multi Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-deep:  #1C2E1A;
+      --green-moss:  #3B5233;
+      --green-sage:  #7A9470;
+      --gold:        #C8A84B;
+      --cream:       #F4F0E6;
+      --cream-dark:  #E8E2D4;
+      --text:        #1C2E1A;
+      --text-light:  #5A6B57;
+      --white:       #FFFFFF;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; }
+    nav {
+      background: var(--green-deep); padding: 1.1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
+      color: var(--cream); letter-spacing: 0.04em; text-decoration: none;
+    }
+    .nav-brand span { color: var(--gold); }
+    nav a.nav-link {
+      color: var(--cream); text-decoration: none; font-size: 0.82rem;
+      letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.8; transition: opacity 0.2s;
+    }
+    nav a.nav-link:hover { opacity: 1; }
+    .hero {
+      background: var(--green-deep); color: var(--cream);
+      padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(200,168,75,0.07) 39px, rgba(200,168,75,0.07) 40px);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-block; font-size: 0.72rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem;
+      border: 1px solid rgba(200,168,75,0.4); padding: 0.3rem 0.9rem; border-radius: 2px;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 7vw, 4.4rem);
+      font-weight: 600; line-height: 1.1; margin-bottom: 1rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero-sub {
+      font-size: 1.05rem; color: rgba(244,240,230,0.78);
+      max-width: 560px; margin: 0 auto 2.2rem; font-weight: 300;
+    }
+    .ledger-strip {
+      display: flex; justify-content: center; gap: 0; margin: 2.5rem auto 0;
+      max-width: 680px; border: 1px solid rgba(200,168,75,0.3); border-radius: 4px; overflow: hidden;
+    }
+    .ledger-col {
+      flex: 1; padding: 0.9rem 0.5rem; font-size: 0.7rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: rgba(244,240,230,0.5);
+      border-right: 1px solid rgba(200,168,75,0.15); text-align: center;
+    }
+    .ledger-col:last-child { border-right: none; }
+    .ledger-col.active { background: rgba(200,168,75,0.12); color: var(--gold); }
+    .ledger-col .amount {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+      font-weight: 600; color: var(--cream); display: block; margin-top: 0.2rem;
+    }
+    .ledger-col.active .amount { color: var(--gold); }
+    .btn-primary {
+      display: inline-block; background: var(--gold); color: var(--green-deep);
+      font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.88rem;
+      letter-spacing: 0.06em; text-transform: uppercase; padding: 0.9rem 2.2rem;
+      border-radius: 3px; text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #d4b05a; transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-block; background: transparent; color: var(--cream);
+      font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.85rem;
+      letter-spacing: 0.05em; padding: 0.85rem 2rem; border-radius: 3px;
+      border: 1px solid rgba(244,240,230,0.35); text-decoration: none; cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); background: rgba(200,168,75,0.08); }
+    .btn-donate {
+      display: inline-block; background: transparent; color: var(--green-moss);
+      font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.85rem;
+      letter-spacing: 0.04em; padding: 0.8rem 1.8rem; border-radius: 3px;
+      border: 1.5px solid var(--green-sage); text-decoration: none; cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-donate:hover { border-color: var(--green-moss); background: rgba(59,82,51,0.06); }
+    .cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 0.5rem; }
+    section { padding: 4.5rem 2rem; }
+    .container { max-width: 760px; margin: 0 auto; }
+    .section-eyebrow {
+      display: block; font-size: 0.7rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--green-sage); margin-bottom: 0.8rem;
+    }
+    h2 {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600; line-height: 1.2; margin-bottom: 1.2rem; color: var(--green-deep);
+    }
+    h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--green-deep); margin-bottom: 0.5rem; }
+    p { color: var(--text-light); margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+    .disclaimer-band { background: var(--green-moss); color: var(--cream); padding: 1.4rem 2rem; text-align: center; }
+    .disclaimer-band p { color: rgba(244,240,230,0.85); font-size: 0.92rem; margin: 0 auto; max-width: 680px; }
+    .disclaimer-band strong { color: var(--gold); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; }
+    .who-section { background: var(--white); }
+    .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+    .who-card { background: var(--cream); border: 1px solid var(--cream-dark); border-radius: 4px; padding: 1.4rem 1.2rem; border-top: 3px solid var(--green-sage); }
+    .who-card .icon { font-size: 1.6rem; margin-bottom: 0.6rem; display: block; }
+    .who-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--green-deep); margin-bottom: 0.35rem; }
+    .who-card p { font-size: 0.84rem; color: var(--text-light); margin: 0; }
+    .features-section { background: var(--cream); }
+    .features-list { list-style: none; margin-top: 1.8rem; display: grid; gap: 1rem; }
+    .features-list li { display: flex; gap: 1rem; align-items: flex-start; padding: 1.1rem 1.2rem; background: var(--white); border-radius: 4px; border-left: 3px solid var(--gold); }
+    .features-list li .feat-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .features-list li .feat-text strong { display: block; font-weight: 600; color: var(--green-deep); margin-bottom: 0.2rem; font-size: 0.95rem; }
+    .features-list li .feat-text span { font-size: 0.84rem; color: var(--text-light); }
+    .philosophy-section { background: var(--green-deep); color: var(--cream); text-align: center; }
+    .philosophy-section h2 { color: var(--cream); }
+    .philosophy-section p { color: rgba(244,240,230,0.75); max-width: 580px; margin: 0 auto 1rem; }
+    .philosophy-quote {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 3.5vw, 2rem);
+      font-style: italic; color: var(--gold);
+      border-top: 1px solid rgba(200,168,75,0.3); border-bottom: 1px solid rgba(200,168,75,0.3);
+      padding: 1.5rem 2rem; margin: 2rem auto; max-width: 600px; line-height: 1.4;
+    }
+    .steps-section { background: var(--white); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; counter-reset: steps; }
+    .step { text-align: center; padding: 1.5rem 1rem; counter-increment: steps; position: relative; }
+    .step::before {
+      content: counter(steps); display: flex; align-items: center; justify-content: center;
+      width: 2.4rem; height: 2.4rem; background: var(--green-moss); color: var(--cream);
+      border-radius: 50%; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
+      font-weight: 600; margin: 0 auto 1rem;
+    }
+    .step h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--green-deep); margin-bottom: 0.4rem; }
+    .step p { font-size: 0.85rem; color: var(--text-light); margin: 0; }
+    .categories-section { background: var(--cream); }
+    .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.6rem; margin-top: 1.8rem; }
+    .cat-tag { background: var(--white); border: 1px solid var(--cream-dark); border-radius: 3px; padding: 0.55rem 0.8rem; font-size: 0.8rem; color: var(--text-light); display: flex; align-items: center; gap: 0.5rem; }
+    .cat-tag::before { content: 'â–¸'; color: var(--green-sage); font-size: 0.7rem; flex-shrink: 0; }
+    .donate-section { background: var(--cream-dark); text-align: center; }
+    .donate-box { background: var(--white); border: 1px solid var(--cream-dark); border-radius: 6px; padding: 2.5rem 2rem; max-width: 560px; margin: 0 auto; }
+    .donate-box .leaf { font-size: 2rem; display: block; margin-bottom: 0.8rem; }
+    .donate-box h3 { margin-bottom: 0.8rem; }
+    .donate-box p { font-size: 0.9rem; margin-bottom: 1.4rem; }
+    .donate-amounts { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.2rem; }
+    .donate-amount-btn {
+      background: transparent; border: 1.5px solid var(--green-sage); color: var(--green-moss);
+      font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500;
+      padding: 0.5rem 1.1rem; border-radius: 3px; cursor: pointer; transition: all 0.2s;
+    }
+    .donate-amount-btn:hover, .donate-amount-btn.selected { background: var(--green-moss); color: var(--cream); border-color: var(--green-moss); }
+    .donate-note { font-size: 0.75rem; color: var(--text-light); margin-top: 0.8rem; font-style: italic; }
+    .faq-section { background: var(--white); }
+    .faq-list { margin-top: 1.8rem; }
+    details { border-bottom: 1px solid var(--cream-dark); padding: 1.1rem 0; }
+    details:first-child { border-top: 1px solid var(--cream-dark); }
+    summary { font-weight: 500; cursor: pointer; font-size: 0.95rem; color: var(--green-deep); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; font-size: 1.2rem; color: var(--green-sage); flex-shrink: 0; font-weight: 300; }
+    details[open] summary::after { content: 'x'; }
+    details p { margin-top: 0.8rem; font-size: 0.88rem; padding-right: 1.5rem; }
+    footer { background: var(--green-deep); color: rgba(244,240,230,0.6); padding: 2.5rem 2rem; text-align: center; font-size: 0.8rem; }
+    footer a { color: var(--gold); text-decoration: none; }
+    .footer-brand { font-family: 'Cormorant Garamond', serif; color: var(--cream); font-size: 1.1rem; margin-bottom: 0.5rem; display: block; }
+    .footer-links { display: flex; gap: 1.4rem; justify-content: center; flex-wrap: wrap; margin: 1rem 0; }
+    .footer-links a { color: rgba(244,240,230,0.6); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    .footer-links a:hover { color: var(--gold); }
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.2rem; }
+      section { padding: 3rem 1.2rem; }
+      .ledger-strip { display: none; }
+      .hero { padding: 3.5rem 1.2rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#">L<span>&</span>L Loblolly <span style="opacity:0.4;margin:0 0.3rem;">|</span> <span style="font-weight:300;font-size:0.95rem;">Field Ledger</span></a>
+  <a class="nav-link" href="#get-yours">Get Yours</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">Google Sheets &middot; Self-Employment Tracker</div>
+  <h1>Your money,<br><em>written down.</em></h1>
+  <p class="hero-sub">The Field Ledger is a done-for-you Schedule C income and expense tracker built for the self-employed, the gig worker, and the grower. No subscriptions. No accountant required. Just clarity.</p>
+  <div class="cta-row">
+    <a href="#get-yours" class="btn-primary">Get the Field Ledger</a>
+    <a href="#what-is-it" class="btn-outline">See what's inside</a>
+  </div>
+  <div class="ledger-strip">
+    <div class="ledger-col"><span>Income</span><span class="amount">$3,240</span></div>
+    <div class="ledger-col active"><span>Expenses</span><span class="amount">$812</span></div>
+    <div class="ledger-col"><span>Net</span><span class="amount">$2,428</span></div>
+    <div class="ledger-col"><span>Category</span><span class="amount">Supplies</span></div>
+  </div>
+</section>
+
+<div class="disclaimer-band">
+  <p><strong>"I'm not your tax preparer."</strong> &nbsp;This tool helps you track, organize, and know your numbers &mdash; the rest is between you and your preparer.</p>
+</div>
+
+<section class="who-section" id="who">
+  <div class="container">
+    <span class="section-eyebrow">Who it's for</span>
+    <h2>If the IRS calls you self-employed, this was built for you.</h2>
+    <p>Self-employment doesn't always look like an office. It looks like an early morning egg run, a delivery bag, a signing table in someone's living room. If you earn income outside of a W-2 and file a Schedule C &mdash; you need this ledger.</p>
+    <div class="who-grid">
+      <div class="who-card"><span class="icon">&#x1F697;</span><h4>Gig Workers</h4><p>Uber, DoorDash, Instacart, TaskRabbit. Every mile, every bag fee, every phone charge matters at tax time.</p></div>
+      <div class="who-card"><span class="icon">&#x1F4CB;</span><h4>Notaries &amp; Signing Agents</h4><p>Mobile notaries, loan signing agents, RON providers. Track your appointments, mileage, and supplies.</p></div>
+      <div class="who-card"><span class="icon">&#x1F413;</span><h4>Farmers &amp; Homesteaders</h4><p>Selling eggs, meat birds, honey, or seedlings? That's income. Your feed and supplies? Deductible.</p></div>
+      <div class="who-card"><span class="icon">&#x1F33F;</span><h4>Plant &amp; Garden Sellers</h4><p>Selling at farmers markets, roadside stands, or online. Every pot of soil and seed packet counts.</p></div>
+      <div class="who-card"><span class="icon">&#x1F404;</span><h4>Animal Raisers</h4><p>Goats, rabbits, ducks, heritage turkeys. If you raise and sell livestock or byproducts, you're a business.</p></div>
+      <div class="who-card"><span class="icon">&#x1F6FB;</span><h4>Delivery &amp; Couriers</h4><p>Independent courier and delivery drivers. Fuel, vehicle maintenance, and bags are your deductions.</p></div>
+      <div class="who-card"><span class="icon">&#x1F4BC;</span><h4>Freelancers &amp; Creatives</h4><p>Designers, writers, bookkeepers, photographers. Log your software, gear, and client income in one place.</p></div>
+      <div class="who-card"><span class="icon">&#x1F344;</span><h4>Specialty Growers</h4><p>Mushroom cultivators, herb growers, microgreen sellers. Track grow supplies against your harvest income.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy-section">
+  <div class="container">
+    <span class="section-eyebrow" style="color:var(--green-sage);">The philosophy</span>
+    <h2>Don't leave your stomach &mdash; or your money &mdash; in nobody's hands.</h2>
+    <p>Our grandmothers didn't have apps. They had ledgers. Every dollar in, every dollar out, written down in real time. That discipline is what kept families fed through hard seasons.</p>
+    <p>The Field Ledger brings that same principle into your Google Drive. No middle man. No monthly fee. Just your numbers, yours to keep.</p>
+    <div class="philosophy-quote">"A man is not a financial plan."</div>
+    <p>Know your numbers. Own your income. File with confidence.</p>
+  </div>
+</section>
+
+<section class="features-section" id="what-is-it">
+  <div class="container">
+    <span class="section-eyebrow">What's inside</span>
+    <h2>Everything you need. Nothing you don't.</h2>
+    <ul class="features-list">
+      <li><span class="feat-icon">&#x1F4C5;</span><div class="feat-text"><strong>Monthly, Weekly &amp; Daily Overview Tabs</strong><span>See your income and expenses broken down by the period that matters most to how you work.</span></div></li>
+      <li><span class="feat-icon">&#x1F5C2;&#xFE0F;</span><div class="feat-text"><strong>IRS Schedule C Categories Pre-Mapped</strong><span>Every expense category already labeled and mapped to the right Schedule C line &mdash; no guessing required.</span></div></li>
+      <li><span class="feat-icon">&#x1F4B0;</span><div class="feat-text"><strong>Running Net Income Total</strong><span>Always know where you stand. Income minus expenses, updated as you log.</span></div></li>
+      <li><span class="feat-icon">&#x1F3A8;</span><div class="feat-text"><strong>Color-Coded Categories</strong><span>Each expense type has its own color so you can scan your ledger at a glance without reading every row.</span></div></li>
+      <li><span class="feat-icon">&#x2601;&#xFE0F;</span><div class="feat-text"><strong>Google Sheets &mdash; Works on Any Device</strong><span>No app to download. No software to install. It lives in your Google Drive and works on your phone, tablet, or laptop.</span></div></li>
+      <li><span class="feat-icon">&#x1F512;</span><div class="feat-text"><strong>Yours to Keep Forever</strong><span>One-time access. Make a copy to your own Drive and it's yours. No subscription, no renewal, no expiration.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="steps-section">
+  <div class="container">
+    <span class="section-eyebrow">How it works</span>
+    <h2>Four steps and you're tracking.</h2>
+    <div class="steps">
+      <div class="step"><h4>Get the link</h4><p>Access the Field Ledger via Google Drive link after getting your copy.</p></div>
+      <div class="step"><h4>Make a copy</h4><p>Go to File &rarr; Make a Copy in Google Sheets. It saves to your own Drive &mdash; I never see your data.</p></div>
+      <div class="step"><h4>Set your year</h4><p>Enter the tax year at the top and your income categories are ready to go.</p></div>
+      <div class="step"><h4>Log as you go</h4><p>Every time money comes in or goes out &mdash; log it. The totals update automatically.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="categories-section">
+  <div class="container">
+    <span class="section-eyebrow">Pre-built categories</span>
+    <h2>Every Schedule C category already waiting for you.</h2>
+    <p>Stop staring at a blank spreadsheet trying to remember what counts. These are mapped directly to IRS Schedule C line items so you &mdash; or your preparer &mdash; can find everything fast.</p>
+    <div class="cat-grid">
+      <div class="cat-tag">Advertising</div>
+      <div class="cat-tag">Car &amp; Truck (Mileage)</div>
+      <div class="cat-tag">Commissions &amp; Fees</div>
+      <div class="cat-tag">Contract Labor</div>
+      <div class="cat-tag">Home Office</div>
+      <div class="cat-tag">Insurance</div>
+      <div class="cat-tag">Legal &amp; Professional</div>
+      <div class="cat-tag">Office Supplies</div>
+      <div class="cat-tag">Phone &amp; Internet</div>
+      <div class="cat-tag">Professional Development</div>
+      <div class="cat-tag">Repairs &amp; Maintenance</div>
+      <div class="cat-tag">Software &amp; Subscriptions</div>
+      <div class="cat-tag">Taxes &amp; Licenses</div>
+      <div class="cat-tag">Travel</div>
+      <div class="cat-tag">Uniforms &amp; Gear</div>
+      <div class="cat-tag">Utilities</div>
+      <div class="cat-tag">Livestock &amp; Feed</div>
+      <div class="cat-tag">Seeds &amp; Supplies</div>
+      <div class="cat-tag">Equipment</div>
+      <div class="cat-tag">Packaging &amp; Shipping</div>
+      <div class="cat-tag">Farmers Market Fees</div>
+      <div class="cat-tag">Other Expenses</div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--green-deep); color: var(--cream); text-align:center;" id="get-yours">
+  <div class="container">
+    <span class="section-eyebrow" style="color:var(--green-sage);">Get the Field Ledger</span>
+    <h2 style="color:var(--cream);">Stop guessing. Start knowing.</h2>
+    <p style="color:rgba(244,240,230,0.75); max-width:500px; margin:0 auto 2rem;">One-time access to the Field Ledger Google Sheet. Make a copy, fill it in, hand it to your tax preparer in April without panic.</p>
+    <div class="cta-row">
+      <a href="#" class="btn-primary">Get Instant Access</a>
+    </div>
+    <p style="font-size:0.78rem; color:rgba(244,240,230,0.4); margin-top:1.2rem;">Google account required. Works on desktop and mobile. One-time access, yours to keep.</p>
+  </div>
+</section>
+
+<section class="donate-section" id="support">
+  <div class="container">
+    <div class="donate-box">
+      <span class="leaf">&#x1F33F;</span>
+      <h3>Can't swing it right now?</h3>
+      <p>If the Field Ledger helped you get organized but you're in a lean season, leave a contribution instead &mdash; whatever feels right. It keeps the tool free and available for the next person who needs it.</p>
+      <div class="donate-amounts">
+        <button class="donate-amount-btn" onclick="selectAmount(this)">$3</button>
+        <button class="donate-amount-btn" onclick="selectAmount(this)">$5</button>
+        <button class="donate-amount-btn" onclick="selectAmount(this)">$10</button>
+        <button class="donate-amount-btn" onclick="selectAmount(this)">Other</button>
+      </div>
+      <a href="#" class="btn-donate">Leave a Contribution</a>
+      <p class="donate-note">No pressure. No judgment. Pay it forward when you can.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="container">
+    <span class="section-eyebrow">Questions</span>
+    <h2>Answers first.</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Do I need to know how to use Google Sheets?</summary>
+        <p>Not really. If you can type numbers into a box, you can use the Field Ledger. Everything is already labeled and formatted. There's no formula-writing, no setup from scratch &mdash; you just make a copy and start entering your numbers.</p>
+      </details>
+      <details>
+        <summary>Will this file do my taxes for me?</summary>
+        <p>No &mdash; and I want to be clear about that upfront. <em>I'm not your tax preparer.</em> The Field Ledger organizes your income and expenses so that when you sit down with your preparer (or use tax software), all your numbers are already in one place. The heavy lifting is done. The filing is still up to you.</p>
+      </details>
+      <details>
+        <summary>I'm a farmer or homesteader &mdash; is this right for me?</summary>
+        <p>Yes. The Field Ledger includes categories for livestock, feed, seeds, supplies, and farmers market fees alongside the standard Schedule C categories. If you sell eggs, plants, mushrooms, seedlings, or animals &mdash; those are self-employment income and you need to track them the same way any other business does.</p>
+      </details>
+      <details>
+        <summary>What if I have more than one income stream?</summary>
+        <p>The ledger is designed with multiple income streams in mind. You can log different income sources and label them &mdash; notary work, field inspections, farmers market, Etsy sales, gig work &mdash; and see them all in one running total.</p>
+      </details>
+      <details>
+        <summary>Is there a subscription or renewal fee?</summary>
+        <p>No. You get access once, make a copy to your own Google Drive, and it's yours permanently. No monthly charge, no annual renewal, no expiration date.</p>
+      </details>
+      <details>
+        <summary>Can I share it with my tax preparer?</summary>
+        <p>Yes. You can share the Google Sheet directly with your preparer as view-only access, or download it as an Excel file to send. Either way works.</p>
+      </details>
+      <details>
+        <summary>What if I can't afford it right now?</summary>
+        <p>Scroll up to the contribution section. If the tool helped you, leave what you can whenever you can. Getting organized shouldn't have a price barrier during a lean season.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-brand">L&amp;L Loblolly Multi Services LLC</span>
+  <p>Serving Berkeley, Charleston &amp; Dorchester Counties, South Carolina</p>
+  <div class="footer-links">
+    <a href="#">Notary Services</a>
+    <a href="#">Tax Preparation</a>
+    <a href="#">Bookkeeping</a>
+    <a href="#">Field Inspections</a>
+    <a href="#">Contact</a>
+  </div>
+  <p style="margin-top:0.8rem;">&#x1F4DE; 843-564-3534 &nbsp;&middot;&nbsp; <a href="mailto:laptoplifestyle@gmail.com">laptoplifestyle@gmail.com</a></p>
+  <p style="margin-top:1rem; font-size:0.72rem; opacity:0.5;">&copy; 2026 L&amp;L Loblolly Multi Services LLC &middot; All Rights Reserved &middot; The Field Ledger is an organizational tool and does not constitute tax advice.</p>
+</footer>
+
+<script>
+  function selectAmount(btn) {
+    document.querySelectorAll('.donate-amount-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+  }
+</script>
+</body>
+</html>

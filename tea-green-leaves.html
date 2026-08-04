@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LSA — Green Leaves Herbal Tea</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#2a3d2a;font-family:'Jost',sans-serif;padding:50px 20px;min-height:100vh}
+
+/* ── PAGE TITLE ── */
+.page-header{text-align:center;margin-bottom:48px}
+.page-header h1{font-family:'Cormorant Garamond',serif;font-size:11px;font-weight:300;letter-spacing:6px;text-transform:uppercase;color:#c8b96a;margin-bottom:6px}
+.page-header p{font-family:'Jost',sans-serif;font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#7a9a6a;margin-bottom:0}
+
+/* ── BLEND LABEL — wide format ── */
+.blend-wrap{max-width:680px;margin:0 auto 60px}
+
+.blend-label{
+  width:100%;
+  background:#f5f0e6;
+  border:2px solid #1e3020;
+  display:grid;
+  grid-template-columns:100px 1fr 148px;
+  height:360px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* LEFT — botanical panel */
+.bot-panel{
+  background:#dde8d8;
+  border-right:2px solid #1e3020;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:10px 6px;
+  gap:6px;
+}
+.bot-panel svg{width:80px}
+
+/* CENTER — main content */
+.main-panel{
+  padding:18px 22px 14px 22px;
+  display:flex;
+  flex-direction:column;
+  border-right:2px solid #1e3020;
+}
+
+/* blend name */
+.blend-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:52px;
+  font-weight:300;
+  line-height:0.9;
+  color:#1e3020;
+  margin-bottom:4px;
+  letter-spacing:-1px;
+}
+.blend-type{
+  font-size:7.5px;
+  font-weight:500;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:#5a7a4a;
+  margin-bottom:10px;
+  border-bottom:1px solid #2a4a2a;
+  padding-bottom:8px;
+}
+
+/* ingredients row */
+.ingredients-row{
+  display:flex;
+  gap:0;
+  margin-bottom:10px;
+  border:1px solid #2a4a2a;
+}
+.ing-block{
+  flex:1;
+  padding:5px 7px;
+  border-right:1px solid #2a4a2a;
+  display:flex;
+  flex-direction:column;
+}
+.ing-block:last-child{border-right:none}
+.ing-name{font-size:7px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#1e3020;margin-bottom:2px}
+.ing-note{font-size:7.5px;font-weight:300;color:#4a6a3a;line-height:1.4}
+
+/* flavor / notes */
+.sl{font-size:7px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:#1e3020;margin-bottom:3px}
+.flavor-bar{
+  display:flex;
+  gap:6px;
+  margin-bottom:10px;
+  flex-wrap:wrap;
+}
+.ftag{font-size:7.5px;font-weight:400;color:#1e3020;background:#c8ddb8;padding:2px 7px;letter-spacing:0.5px}
+
+.brew-row{
+  margin-top:auto;
+  display:flex;
+  gap:12px;
+  border-top:1px solid #2a4a2a;
+  padding-top:8px;
+}
+.brew-item{display:flex;flex-direction:column}
+.brew-label{font-size:6.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#5a7a4a;margin-bottom:2px}
+.brew-val{font-size:9px;font-weight:400;color:#1e3020}
+
+/* RIGHT sidebar */
+.right-panel{display:grid;grid-template-rows:90px 1fr 1fr}
+
+.logo-cell{
+  border-bottom:2px solid #1e3020;
+  display:flex;align-items:center;justify-content:center;
+  padding:8px;
+  background:#e8f0e0;
+}
+.logo-cell svg{width:90px;height:70px}
+
+.benefits-cell{
+  border-bottom:2px solid #1e3020;
+  padding:8px 10px;
+  background:#f5f0e6;
+}
+.intentions-cell{
+  padding:8px 10px;
+  background:#f5f0e6;
+}
+.sbl{font-size:6.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#2a4a2a;margin-bottom:3px}
+.sbt{font-size:7.8px;font-weight:300;color:#1e3020;line-height:1.6}
+
+/* gold accent line at top */
+.blend-label::before{
+  content:'';display:none;
+}
+.gold-stripe{
+  width:100%;
+  height:3px;
+  background:linear-gradient(90deg,#1e3020,#c8b96a,#8a6a20,#c8b96a,#1e3020);
+  margin-bottom:0;
+}
+
+/* ── INFO CARD below label ── */
+.info-card{
+  max-width:680px;
+  margin:0 auto 60px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2px;
+  border:1.5px solid #1e3020;
+  background:#1e3020;
+}
+.info-block{
+  background:#f5f0e6;
+  padding:16px 20px;
+}
+.info-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:#1e3020;margin-bottom:4px}
+.info-sub{font-size:7px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:#5a7a4a;margin-bottom:10px}
+.info-text{font-size:9px;font-weight:300;color:#2a3a2a;line-height:1.7}
+
+/* footer */
+.tea-footer{text-align:center;margin-top:32px}
+.tea-footer p{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#7a9a6a}
+
+@media print{body{background:white;padding:10px}.blend-label{box-shadow:none}}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Life Skills Academy &nbsp;·&nbsp; Tea Blends</h1>
+  <p>Hand-crafted herbal blends &nbsp;·&nbsp; Vol. V &nbsp;·&nbsp; The Tea Kit</p>
+</div>
+
+<!-- VIDEO AD -->
+<div style="max-width:420px;margin:0 auto 40px;border:2px solid #1e3020;box-shadow:0 8px 32px rgba(0,0,0,0.25);">
+  <video controls preload="metadata" style="width:100%;display:block;background:#000;">
+    <source src="green-leaves-ad.mp4" type="video/mp4">
+    Your browser doesn't support embedded video.
+  </video>
+</div>
+
+<!-- GOLD STRIPE -->
+<div style="max-width:680px;margin:0 auto 0;height:3px;background:linear-gradient(90deg,#1e3020,#c8b96a,#8a6a20,#c8b96a,#1e3020)"></div>
+
+<!-- MAIN BLEND LABEL -->
+<div class="blend-wrap">
+<div class="blend-label">
+
+  <!-- LEFT: 4 botanical sketches stacked -->
+  <div class="bot-panel">
+    <!-- Green Tea leaf -->
+    <svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#1e3020" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M40,55 C20,40 10,25 14,10 C18,0 30,0 38,8 C46,16 50,30 40,55 Z"/>
+      <line x1="40" y1="55" x2="28" y2="14"/>
+      <line x1="30" y1="20" x2="20" y2="28"/><line x1="26" y1="30" x2="16" y2="36"/><line x1="24" y1="40" x2="15" y2="45"/>
+      <path d="M40,55 C60,40 70,25 66,10 C62,0 50,0 42,8 C34,16 30,30 40,55 Z"/>
+      <line x1="50" y1="20" x2="60" y2="28"/><line x1="54" y1="30" x2="64" y2="36"/>
+    </svg>
+    <!-- Yerba Mate -->
+    <svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#1e3020" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="40" cy="30" rx="28" ry="22"/>
+      <line x1="40" y1="8" x2="40" y2="52"/>
+      <line x1="20" y1="20" x2="60" y2="20"/><line x1="16" y1="30" x2="64" y2="30"/><line x1="20" y1="40" x2="60" y2="40"/>
+      <line x1="40" y1="8" x2="40" y2="2"/><line x1="36" y1="3" x2="44" y2="3"/>
+    </svg>
+    <!-- Moringa -->
+    <svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#1e3020" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="40" y1="58" x2="40" y2="8"/>
+      <line x1="40" y1="20" x2="20" y2="10"/><line x1="40" y1="30" x2="60" y2="20"/><line x1="40" y1="40" x2="20" y2="32"/><line x1="40" y1="48" x2="60" y2="40"/>
+      <ellipse cx="16" cy="8" rx="7" ry="5" transform="rotate(-25,16,8)"/>
+      <ellipse cx="64" cy="18" rx="7" ry="5" transform="rotate(20,64,18)"/>
+      <ellipse cx="16" cy="30" rx="7" ry="5" transform="rotate(-20,16,30)"/>
+      <ellipse cx="64" cy="38" rx="7" ry="5" transform="rotate(15,64,38)"/>
+    </svg>
+    <!-- Nettle -->
+    <svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#1e3020" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="40" y1="58" x2="40" y2="5"/>
+      <path d="M40,15 C28,8 18,12 20,22 C22,30 34,30 40,22 Z"/>
+      <path d="M40,15 C52,8 62,12 60,22 C58,30 46,30 40,22 Z"/>
+      <path d="M40,38 C28,31 18,35 20,45 C22,53 34,53 40,45 Z"/>
+      <path d="M40,38 C52,31 62,35 60,45 C58,53 46,53 40,45 Z"/>
+      <line x1="40" y1="15" x2="30" y2="22"/><line x1="40" y1="38" x2="30" y2="45"/>
+    </svg>
+  </div>
+
+  <!-- CENTER: content -->
+  <div class="main-panel">
+    <div class="blend-name">Green<br>Leaves</div>
+    <div class="blend-type">Herbal Tea Blend &nbsp;·&nbsp; Life Skills Academy</div>
+
+    <!-- Ingredients -->
+    <div class="sl">Ingredients</div>
+    <div class="ingredients-row">
+      <div class="ing-block">
+        <div class="ing-name">Green Tea</div>
+        <div class="ing-note">Antioxidant base. Mild caffeine. Earthy & grassy.</div>
+      </div>
+      <div class="ing-block">
+        <div class="ing-name">Yerba Maté</div>
+        <div class="ing-note">Energy & focus. Smoky, bold, slightly bitter.</div>
+      </div>
+      <div class="ing-block">
+        <div class="ing-name">Moringa</div>
+        <div class="ing-note">Nutrient-dense. Mild, earthy, slightly grassy.</div>
+      </div>
+      <div class="ing-block">
+        <div class="ing-name">Nettle</div>
+        <div class="ing-note">Mineral-rich. Earthy, spinach-like, cleansing.</div>
+      </div>
+    </div>
+
+    <!-- Flavor -->
+    <div class="sl">Flavor Profile</div>
+    <div class="flavor-bar">
+      <span class="ftag">Earthy</span>
+      <span class="ftag">Grassy</span>
+      <span class="ftag">Slightly Bold</span>
+      <span class="ftag">Clean Finish</span>
+      <span class="ftag">Mineral</span>
+    </div>
+
+    <!-- Brew guide -->
+    <div class="brew-row">
+      <div class="brew-item">
+        <div class="brew-label">Water Temp</div>
+        <div class="brew-val">175–185°F</div>
+      </div>
+      <div class="brew-item">
+        <div class="brew-label">Steep Time</div>
+        <div class="brew-val">3–5 min</div>
+      </div>
+      <div class="brew-item">
+        <div class="brew-label">Amount</div>
+        <div class="brew-val">1 tsp / cup</div>
+      </div>
+      <div class="brew-item">
+        <div class="brew-label">Caffeine</div>
+        <div class="brew-val">Low–Moderate</div>
+      </div>
+      <div class="brew-item">
+        <div class="brew-label">Serve</div>
+        <div class="brew-val">Hot or Iced</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT sidebar -->
+  <div class="right-panel">
+    <div class="logo-cell">
+      <svg viewBox="0 0 90 70" xmlns="http://www.w3.org/2000/svg">
+        <defs><path id="ta" d="M 6,50 A 38,38 0 0,1 84,50"/><path id="tb" d="M 14,58 A 30,30 0 0,0 76,58"/></defs>
+        <text font-family="Jost,sans-serif" font-size="8" font-weight="400" letter-spacing="1.8" fill="#1e3020"><textPath href="#ta" startOffset="50%" text-anchor="middle">Life Skills Academy</textPath></text>
+        <circle cx="45" cy="40" r="13" fill="none" stroke="#1e3020" stroke-width="1.2"/>
+        <text x="45" y="37" font-family="Jost,sans-serif" font-size="6" font-weight="300" fill="#1e3020" text-anchor="middle">Est.</text>
+        <text x="45" y="47" font-family="Cormorant Garamond,serif" font-size="11" fill="#1e3020" text-anchor="middle">LSA</text>
+        <text font-family="Jost,sans-serif" font-size="6.5" font-weight="300" letter-spacing="1.2" fill="#1e3020"><textPath href="#tb" startOffset="50%" text-anchor="middle">&#9670; Tea Blends &#9670;</textPath></text>
+      </svg>
+    </div>
+    <div class="benefits-cell">
+      <div class="sbl">Health Benefits</div>
+      <div class="sbt">Rich antioxidants. Energy without crash. Iron & minerals. Anti-inflammatory. Immune support. Detoxifying. Blood sugar balance. Mental clarity.</div>
+    </div>
+    <div class="intentions-cell">
+      <div class="sbl">Intentions</div>
+      <div class="sbt">Vitality. Clarity. Grounding. Ancestral nourishment. Daily renewal. Earth energy. Abundance.</div>
+    </div>
+  </div>
+
+</div><!-- end blend-label -->
+
+<!-- GOLD STRIPE bottom -->
+<div style="height:3px;background:linear-gradient(90deg,#1e3020,#c8b96a,#8a6a20,#c8b96a,#1e3020)"></div>
+</div><!-- end blend-wrap -->
+
+<!-- INGREDIENT DETAIL CARDS -->
+<div class="info-card">
+  <div class="info-block">
+    <div class="info-title">Green Tea</div>
+    <div class="info-sub">Camellia sinensis · Leaf</div>
+    <div class="info-text">The world's most consumed antioxidant-rich beverage. Contains EGCG — a powerful polyphenol linked to longevity, fat metabolism, and brain health. Provides calm, sustained energy through its unique combination of caffeine and L-theanine.</div>
+  </div>
+  <div class="info-block">
+    <div class="info-title">Yerba Maté</div>
+    <div class="info-sub">Ilex paraguariensis · Leaf</div>
+    <div class="info-text">The sacred drink of South America, beloved for its clean, sustained energy — the strength of coffee, the health of tea, the euphoria of chocolate. Rich in 24 vitamins and minerals, 15 amino acids, and powerful antioxidants. Nourishes body and mind.</div>
+  </div>
+  <div class="info-block">
+    <div class="info-title">Moringa</div>
+    <div class="info-sub">Moringa oleifera · Leaf</div>
+    <div class="info-text">Called the "miracle tree," moringa contains more vitamin C than oranges, more calcium than milk, more iron than spinach, and more potassium than bananas — all in one leaf. Used in traditional medicine across Africa, India, and the Caribbean for centuries.</div>
+  </div>
+  <div class="info-block">
+    <div class="info-title">Nettle</div>
+    <div class="info-sub">Urtica dioica · Leaf</div>
+    <div class="info-text">One of the most nutrient-dense plants on earth. Nettle is rich in iron, calcium, magnesium, and vitamins A, C, and K. A traditional spring tonic used to cleanse the blood, reduce inflammation, support kidneys, and restore energy after winter.</div>
+  </div>
+</div>
+
+<div class="tea-footer">
+  <p>Life Skills Academy &nbsp;·&nbsp; Green Leaves Blend &nbsp;·&nbsp; empressgdesigns@gmail.com &nbsp;·&nbsp; Crafted with Ancestral Wisdom</p>
+</div>
+
+</body>
+</html>
