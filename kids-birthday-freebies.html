@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kids' Birthday Freebies | Lakyshia D. Godfrey</title>
+<meta name="description" content="Birthday clubs and rewards programs built for kids — free treats, activities, and gifts, filtered to chains available in South Carolina.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0B140E; --bg-card:#132018; --bg-card-hover:#182A1F;
+    --purple-pale:#6B4A94; --gold:#C9A227; --gold-soft:#E0C165;
+    --sage:#8FAF95; --text:#F2F5EF; --text-muted:#A7BBAA;
+    --border:rgba(143,175,149,0.15);
+    --font-display:'Fraunces', serif; --font-body:'DM Sans', sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    background:
+      radial-gradient(ellipse 80% 55% at 50% 0%, rgba(74,47,107,0.28), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 90% 100%, rgba(79,122,92,0.18), transparent 60%),
+      var(--bg);
+    color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased; padding-bottom:4rem;
+  }
+  a{color:inherit;}
+  header{max-width:760px;margin:0 auto;padding:3rem 1.5rem 2rem;text-align:center;}
+  .back-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.85rem;font-weight:600;color:var(--sage);text-decoration:none;margin-bottom:2rem;}
+  .back-link:hover{color:var(--gold-soft);}
+  .back-link svg{width:14px;height:14px;}
+  .eyebrow{font-size:0.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:0.9rem;}
+  h1{font-family:var(--font-display);font-weight:600;font-size:clamp(2.2rem, 6vw, 3.2rem);margin-bottom:1rem;}
+  h1 em{font-style:italic;color:var(--gold);}
+  header p{color:var(--text-muted);max-width:560px;margin:0 auto;font-size:1.02rem;}
+  .sibling-link{display:inline-block;margin-top:1.5rem;font-size:0.85rem;font-weight:600;color:var(--gold-soft);text-decoration:none;border-bottom:1px solid rgba(224,193,101,0.4);padding-bottom:2px;}
+  .sibling-link:hover{color:var(--gold);}
+  main{max-width:1120px;margin:0 auto;padding:0 1.5rem;}
+
+  .sc-banner{max-width:720px;margin:0 auto 2rem;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:1rem 1.4rem;text-align:center;font-size:0.85rem;color:var(--text-muted);}
+  .sc-banner strong{color:var(--gold-soft);}
+
+  .controls{position:sticky;top:0;z-index:10;background:linear-gradient(var(--bg) 82%, transparent);padding:1rem 0 1.25rem;margin-bottom:0.5rem;}
+  .search-box{display:flex;align-items:center;gap:0.6rem;background:var(--bg-card);border:1px solid var(--border);border-radius:999px;padding:0.75rem 1.25rem;max-width:420px;margin:0 auto 1rem;}
+  .search-box svg{width:16px;height:16px;stroke:var(--text-muted);flex-shrink:0;}
+  .search-box input{background:none;border:none;outline:none;color:var(--text);font-family:var(--font-body);font-size:0.92rem;width:100%;}
+  .search-box input::placeholder{color:var(--text-muted);}
+  .filters{display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;}
+  .filter-pill{background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);font-size:0.78rem;font-weight:600;letter-spacing:0.3px;padding:0.45rem 1rem;border-radius:999px;cursor:pointer;transition:border-color .2s, color .2s, background .2s;}
+  .filter-pill:hover{border-color:var(--sage);color:var(--text);}
+  .filter-pill.active{background:linear-gradient(135deg, var(--gold), #A9821E);color:#1B1204;border-color:transparent;}
+
+  .cat-group{margin-top:2.75rem;}
+  .cat-head{display:flex;align-items:baseline;gap:0.6rem;margin-bottom:1.1rem;}
+  .cat-head h2{font-family:var(--font-display);font-weight:600;font-size:1.4rem;}
+  .cat-head span{font-size:0.8rem;color:var(--text-muted);}
+  .freebie-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1rem;}
+  .freebie-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.3rem 1.4rem;transition:border-color .2s, transform .2s, background .2s;}
+  .freebie-card:hover{border-color:var(--sage);background:var(--bg-card-hover);transform:translateY(-2px);}
+  .freebie-top{display:flex;justify-content:space-between;align-items:flex-start;gap:0.6rem;margin-bottom:0.7rem;}
+  .freebie-name{font-family:var(--font-display);font-weight:600;font-size:1.05rem;}
+  .claim-badge{flex-shrink:0;font-size:0.6rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;padding:0.25rem 0.6rem;border-radius:999px;white-space:nowrap;}
+  .claim-badge.show{background:rgba(143,175,149,0.18);color:var(--sage);}
+  .claim-badge.email{background:rgba(201,162,39,0.16);color:var(--gold-soft);}
+  .claim-badge.app{background:rgba(107,74,148,0.28);color:var(--purple-pale);}
+  .claim-badge.web{background:rgba(167,187,170,0.18);color:var(--text-muted);}
+  .freebie-row{display:flex;gap:0.5rem;font-size:0.82rem;padding:0.25rem 0;border-top:1px solid var(--border);}
+  .freebie-row:first-of-type{border-top:none;}
+  .row-label{flex-shrink:0;width:64px;color:var(--text-muted);font-weight:600;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.4px;padding-top:2px;}
+  .row-val{color:var(--text);}
+  .hidden{display:none !important;}
+  .no-results{text-align:center;color:var(--text-muted);font-size:0.92rem;padding:3rem 1rem;}
+  .disclosure{max-width:720px;margin:4rem auto 0;padding:1.5rem;border-top:1px solid var(--border);text-align:center;font-size:0.78rem;color:var(--text-muted);}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    Back to the Hub
+  </a>
+  <span class="eyebrow">Free Perks</span>
+  <h1>Kids' Birthday <em>Freebies</em></h1>
+  <p>Birthday clubs and rewards programs built specifically for kids — free treats, activities, and small gifts. Most require a parent to sign up in advance with the child's name and birthdate.</p>
+  <a href="freebies.html" class="sibling-link">Looking for adult birthday & sign-up freebies instead? →</a>
+</header>
+
+<main>
+
+  <div class="sc-banner">National chains below are filtered to brands confirmed to operate in <strong>South Carolina</strong>. Two entries — Medieval Times and Bubba Gump Shrimp Co. — are specifically the Myrtle Beach locations.</div>
+
+  <div class="controls">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="searchInput" placeholder="Search a brand...">
+    </div>
+    <div class="filters" id="filterBar">
+      <button class="filter-pill active" data-filter="all">All</button>
+      <button class="filter-pill" data-filter="food">Restaurants &amp; Treats</button>
+      <button class="filter-pill" data-filter="play">Play &amp; Entertainment</button>
+      <button class="filter-pill" data-filter="books">Books &amp; Learning</button>
+      <button class="filter-pill" data-filter="retail">Retail &amp; Clothing</button>
+    </div>
+  </div>
+
+  <!-- RESTAURANTS & TREATS -->
+  <section class="cat-group" data-group="food">
+    <div class="cat-head"><h2>Restaurants &amp; Treats</h2><span>Sign up as the parent, hand off the treat</span></div>
+    <div class="freebie-grid">
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Chuck E. Cheese Birthday Club</span><span class="claim-badge app">Email / App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free tokens or game-play credits emailed on birthday</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Cold Stone Creamery eClub</span><span class="claim-badge app">Email / App</span></div><div class="freebie-row"><span class="row-label">Sign-Up</span><span class="row-val">BOGO coupon immediately (18+ to register)</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Special reward on birthday</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Starbucks Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Beverage, food item, or bottled drink (13+, or parent enters child's birthday)</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Denny's Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Birthday gift; kids-eat-free rewards apply year-round</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Red Robin Royalty</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free milkshake (adult); kids 17 &amp; under get a $7 meal coupon</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Baskin-Robbins</span><span class="claim-badge app">App / Email</span></div><div class="freebie-row"><span class="row-label">Sign-Up</span><span class="row-val">Free scoop for joining</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free ice cream coupon, up to 5 family members</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Jimmy John's Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free surprise reward on birthday</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Auntie Anne's Pretzel Perks</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free pretzel during birthday month (kid can sign up w/ smartphone)</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Ben &amp; Jerry's Flavor Fanatics</span><span class="claim-badge app">Email / App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free scoop on birthday (16+ to sign up, or use child's birth month)</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">IHOP Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free pancakes on birthday (kids 13+ can register)</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Olive Garden eClub</span><span class="claim-badge email">Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free dessert in-restaurant on birthday</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Pizza Hut Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Coupon for free cinnamon sticks on birthday</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Applebee's Club Applebee's</span><span class="claim-badge email">Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free dessert with $15 purchase (13+ to join)</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Hard Rock Cafe Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free birthday dessert</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Jamba Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free small smoothie on birthday (13+ to join)</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Red Lobster Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free appetizer or dessert (13+ to join)</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Dairy Queen Blizzard Fan Club</span><span class="claim-badge app">App / Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free birthday Blizzard</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Edible Arrangements Rewards</span><span class="claim-badge email">Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free 6-piece chocolate-dipped fruit box</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Panera Bread MyPanera</span><span class="claim-badge app">App / Email</span></div><div class="freebie-row"><span class="row-label">Sign-Up</span><span class="row-val">Free treat for signing up</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free bakery item on birthday</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Buffalo Wild Wings Blazin' Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Six free wings during birthday month</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Chipotle Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Birthday surprise with purchase (college rewards club too)</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Papa John's Papa Rewards</span><span class="claim-badge app">App / Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Coupon for a free dessert during birthday month</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Chili's My Chili's Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free dessert + free chips &amp; salsa any visit (18+ to join)</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Culver's MyCulver's</span><span class="claim-badge app">App / Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free one-scoop sundae per registered family birthday</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Nothing Bundt Cakes eClub</span><span class="claim-badge email">Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free Bundtlet on birthday (13+ to join)</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Crumbl Cookies Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Voucher for a free cookie on birthday</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">16 Handles Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">$5 in free frozen yogurt (has SC locations)</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Carvel Fudgie Fanatics</span><span class="claim-badge app">App / Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free cone on birthday</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Checkers Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free milkshake or similar (13+, purchase in prior year req.)</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Cheesecake Factory Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free slice with purchase, within 2 weeks of birthday</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Smashburger Smash Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Sign-Up</span><span class="row-val">Free burger for downloading app</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free reward on birthday</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Chick-fil-A One</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Cookie for younger kids, up to a free entrée at higher tiers</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Cinnabon App</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Sign-Up</span><span class="row-val">Free MiniBon for signing up</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free cold brew for the adult on birthday</span></div></div>
+      <div class="freebie-card" data-cat="food"><div class="freebie-top"><span class="freebie-name">Krispy Kreme Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free dozen doughnuts</span></div></div>
+    </div>
+  </section>
+
+  <!-- PLAY & ENTERTAINMENT -->
+  <section class="cat-group" data-group="play">
+    <div class="cat-head"><h2>Play, Activities &amp; Entertainment</h2><span>Includes two Myrtle Beach, SC spots</span></div>
+    <div class="freebie-grid">
+      <div class="freebie-card" data-cat="play"><div class="freebie-top"><span class="freebie-name">Build-A-Bear Bonus Club</span><span class="claim-badge app">Email / App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free reward or discount during birthday month</span></div></div>
+      <div class="freebie-card" data-cat="play"><div class="freebie-top"><span class="freebie-name">Local bounce/trampoline parks (Monkey Joe's, Sky Zone)</span><span class="claim-badge email">Local Signup</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free admission coupon or discounted pass — varies by location</span></div></div>
+      <div class="freebie-card" data-cat="play"><div class="freebie-top"><span class="freebie-name">Children's museums (membership-based)</span><span class="claim-badge web">Check Site</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free admission for members; some offer a one-time free visit</span></div></div>
+      <div class="freebie-card" data-cat="play"><div class="freebie-top"><span class="freebie-name">Great Clips Kids Club</span><span class="claim-badge email">Email / In-Store</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Small birthday treat or coupon</span></div></div>
+      <div class="freebie-card" data-cat="play"><div class="freebie-top"><span class="freebie-name">Medieval Times — Myrtle Beach, SC</span><span class="claim-badge email">Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free birthday surprise for Queen's Court list members</span></div></div>
+      <div class="freebie-card" data-cat="play"><div class="freebie-top"><span class="freebie-name">Bubba Gump — Myrtle Beach, SC</span><span class="claim-badge email">Email</span></div><div class="freebie-row"><span class="row-label">Sign-Up</span><span class="row-val">$25 reward for the $25 one-time fee</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Annual $25 birthday meal coupon</span></div></div>
+      <div class="freebie-card" data-cat="play"><div class="freebie-top"><span class="freebie-name">AMC Theatres Stubs</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free large popcorn during birthday month</span></div></div>
+      <div class="freebie-card" data-cat="play"><div class="freebie-top"><span class="freebie-name">Nick Jr. Birthday Club</span><span class="claim-badge web">Web Sign-Up</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Pre-recorded call from a favorite character</span></div></div>
+    </div>
+  </section>
+
+  <!-- BOOKS & LEARNING -->
+  <section class="cat-group" data-group="books">
+    <div class="cat-head"><h2>Books &amp; Learning</h2><span>Check with your local branch</span></div>
+    <div class="freebie-grid">
+      <div class="freebie-card" data-cat="books"><div class="freebie-top"><span class="freebie-name">Barnes &amp; Noble Kids' Birthday Club</span><span class="claim-badge email">Email / In-Store</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Coupon for a free or discounted item</span></div></div>
+      <div class="freebie-card" data-cat="books"><div class="freebie-top"><span class="freebie-name">Public library "Book Birthday" programs</span><span class="claim-badge web">Check Branch</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free book on birthday — depends on your specific branch</span></div></div>
+    </div>
+  </section>
+
+  <!-- RETAIL & CLOTHING -->
+  <section class="cat-group" data-group="retail">
+    <div class="cat-head"><h2>Retail &amp; Clothing</h2><span>Add kids to the family account</span></div>
+    <div class="freebie-grid">
+      <div class="freebie-card" data-cat="retail"><div class="freebie-top"><span class="freebie-name">Gymboree / Pottery Barn Kids</span><span class="claim-badge email">Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Birthday discount email</span></div></div>
+      <div class="freebie-card" data-cat="retail"><div class="freebie-top"><span class="freebie-name">Children's Place (My Place Rewards)</span><span class="claim-badge email">Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">20% off for up to 4 kids (25% off with store card)</span></div></div>
+      <div class="freebie-card" data-cat="retail"><div class="freebie-top"><span class="freebie-name">Old Navy Navyist Rewards</span><span class="claim-badge app">Email / App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Birthday perk for member + kids on account</span></div></div>
+      <div class="freebie-card" data-cat="retail"><div class="freebie-top"><span class="freebie-name">Carter's Rewards</span><span class="claim-badge email">Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free birthday gift per child added (up to 5 kids)</span></div></div>
+      <div class="freebie-card" data-cat="retail"><div class="freebie-top"><span class="freebie-name">Sephora Beauty Insider</span><span class="claim-badge app">App / In-Store</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free gift (online redemption requires $25 spend)</span></div></div>
+      <div class="freebie-card" data-cat="retail"><div class="freebie-top"><span class="freebie-name">Ulta Rewards</span><span class="claim-badge app">App</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Free birthday gift</span></div></div>
+      <div class="freebie-card" data-cat="retail"><div class="freebie-top"><span class="freebie-name">Kohl's Rewards</span><span class="claim-badge email">Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Up to $10 Kohl's Cash (purchase prior req.)</span></div></div>
+      <div class="freebie-card" data-cat="retail"><div class="freebie-top"><span class="freebie-name">DSW VIP</span><span class="claim-badge email">Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">$5 birthday coupon</span></div></div>
+      <div class="freebie-card" data-cat="retail"><div class="freebie-top"><span class="freebie-name">Macy's Star Rewards</span><span class="claim-badge email">Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">Birthday reward, varies (purchase in prior year req.)</span></div></div>
+      <div class="freebie-card" data-cat="retail"><div class="freebie-top"><span class="freebie-name">Famous Footwear Rewards</span><span class="claim-badge email">Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">$5 off coupon during birthday month</span></div></div>
+      <div class="freebie-card" data-cat="retail"><div class="freebie-top"><span class="freebie-name">CVS Beauty Club</span><span class="claim-badge email">Email</span></div><div class="freebie-row"><span class="row-label">Birthday</span><span class="row-val">$3 in ExtraBucks on birthday</span></div></div>
+    </div>
+  </section>
+
+  <p class="no-results hidden" id="noResults">No matching freebies found — try a different search term.</p>
+
+  <div class="disclosure">
+    Kids' birthday programs are more likely to vary by individual store, franchise, or local library branch than national chains — always confirm directly with the specific location before planning around an offer.
+  </div>
+
+</main>
+
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const filterBar = document.getElementById('filterBar');
+  const groups = document.querySelectorAll('.cat-group');
+  const noResults = document.getElementById('noResults');
+  let activeFilter = 'all';
+
+  function applyFilters(){
+    const term = searchInput.value.trim().toLowerCase();
+    let anyVisible = false;
+
+    groups.forEach(group => {
+      const groupCat = group.dataset.group;
+      const groupMatchesFilter = activeFilter === 'all' || activeFilter === groupCat;
+      let groupHasVisibleCard = false;
+
+      group.querySelectorAll('.freebie-card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const matchesSearch = term === '' || text.includes(term);
+        const show = groupMatchesFilter && matchesSearch;
+        card.classList.toggle('hidden', !show);
+        if(show) groupHasVisibleCard = true;
+      });
+
+      group.classList.toggle('hidden', !groupHasVisibleCard);
+      if(groupHasVisibleCard) anyVisible = true;
+    });
+
+    noResults.classList.toggle('hidden', anyVisible);
+  }
+
+  searchInput.addEventListener('input', applyFilters);
+
+  filterBar.querySelectorAll('.filter-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      filterBar.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      activeFilter = pill.dataset.filter;
+      applyFilters();
+    });
+  });
+</script>
+
+</body>
+</html>
