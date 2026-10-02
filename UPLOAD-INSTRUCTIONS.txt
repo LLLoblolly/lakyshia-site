@@ -1,0 +1,9 @@
+REPO: https://github.com/LLLoblolly/lakyshia-site
+Upload every .html file in this folder to the ROOT of the repo (Add file > Upload files), replacing the existing ones. Commit.
+
+What changed:
+- "Lakyshia" -> "LaKyshia" (capital K) in page titles, hero name, and copyright lines on all pages. Web addresses stay lowercase.
+- Notary Mom link: notraymom.com -> notarymom.com (index.html)
+- Contact email on Field Ledger and Mileage Log pages: mobilelaptoplifestyle@gmail.com
+- NEW tile on the hub (Digital Universe section): AI Master Class -> aimasterclass.lllloblollymultiservices.com/start-here.html
+  (Upload the AI Master Class files FIRST so that link does not 404.)
