@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Godfrey for Berkeley County | Local Living, Saving &amp; Growing</title>
+<meta name="description" content="A neighbor-run hub for Berkeley County, SC: weekly grocery deals, smart shopping, insurance help, local events, and homesteading.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F4EC;
+    --card:#FFFFFF;
+    --ink:#1E2A24;
+    --muted:#5E6B62;
+    --border:#E2DCCB;
+    --marsh:#2F5D4A;
+    --marsh-deep:#1E3F32;
+    --tide:#3D6E86;
+    --pluff:#7A5C3E;
+    --sun:#D9A441;
+    --sun-soft:#F1D79A;
+    --font-display:'Fraunces', serif;
+    --font-body:'DM Sans', sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#121A16; --card:#1A2620; --ink:#EEF1EA; --muted:#A9B6AC; --border:#2C3B33;
+      --marsh:#7FB59A; --tide:#8CB8CF; --pluff:#C9A27C; --sun:#E7BC5E;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#121A16; --card:#1A2620; --ink:#EEF1EA; --muted:#A9B6AC; --border:#2C3B33;
+    --marsh:#7FB59A; --tide:#8CB8CF; --pluff:#C9A27C; --sun:#E7BC5E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-body);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(165deg, #2F5D4A 0%, #1E3F32 70%);
+    color:#F4F1E6;
+    padding:4.5rem 1rem 4rem;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:'';position:absolute;left:0;right:0;bottom:-1px;height:48px;
+    background:var(--bg);
+    clip-path:polygon(0 60%,12% 40%,25% 55%,38% 35%,52% 52%,66% 30%,80% 50%,92% 38%,100% 50%,100% 100%,0 100%);
+  }
+  .eyebrow{font-size:0.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#F1D79A;margin-bottom:1rem;}
+  .hero h1{font-family:var(--font-display);font-weight:600;font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.15;max-width:760px;margin:0 auto;}
+  .hero h1 em{color:#F1D79A;font-weight:500;}
+  .hero p{max-width:580px;margin:1.1rem auto 0;color:#D8E3DA;font-size:1.05rem;}
+  .hero .cta-row{display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-top:2rem;}
+  .btn{display:inline-block;padding:0.8rem 1.4rem;border-radius:999px;font-weight:700;font-size:0.95rem;text-decoration:none;}
+  .btn.primary{background:#D9A441;color:#1E2A24;}
+  .btn.ghost{border:1px solid rgba(241,215,154,0.5);color:#F4F1E6;}
+
+  main{max-width:1100px;margin:0 auto;padding:2.5rem 1rem 1rem;}
+  .section-head{display:flex;align-items:baseline;gap:1rem;margin:2.5rem 0 1.4rem;}
+  .section-head h2{font-family:var(--font-display);font-weight:600;font-size:1.6rem;color:var(--marsh);}
+  .section-head .rule{flex:1;height:1px;background:var(--border);}
+  .lede{color:var(--muted);margin:-0.6rem 0 1.5rem;max-width:680px;}
+
+  /* Hub cards */
+  .hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:1rem;}
+  .hub-card{
+    background:var(--card);border:1px solid var(--border);border-radius:16px;
+    padding:1.4rem;text-decoration:none;display:flex;flex-direction:column;gap:0.6rem;
+    border-top:4px solid var(--accent, var(--marsh));
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .hub-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(30,63,50,0.12);}
+  .hub-card .icon{font-size:1.7rem;}
+  .hub-card h3{font-family:var(--font-display);font-size:1.2rem;font-weight:600;}
+  .hub-card p{font-size:0.92rem;color:var(--muted);flex:1;}
+  .hub-card .go{font-weight:700;font-size:0.88rem;color:var(--accent, var(--marsh));}
+  .tag{display:inline-block;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:0.15rem 0.55rem;border-radius:999px;background:var(--bg);color:var(--muted);border:1px solid var(--border);align-self:flex-start;}
+
+  /* Deal drop band */
+  .band{
+    margin-top:3rem;background:var(--card);border:1px solid var(--border);border-radius:20px;
+    padding:2rem 1.5rem;display:grid;grid-template-columns:1.3fr 1fr;gap:2rem;align-items:center;
+  }
+  .band h2{font-family:var(--font-display);font-size:1.7rem;color:var(--marsh);margin-bottom:0.6rem;}
+  .band p{color:var(--muted);}
+  .band ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+  .band li{display:flex;gap:0.6rem;align-items:flex-start;font-size:0.95rem;}
+  .band li span:first-child{font-size:1.2rem;}
+  .band .btn{margin-top:1.2rem;background:var(--marsh);color:#F4F1E6;}
+
+  /* Towns */
+  .towns{display:flex;flex-wrap:wrap;gap:0.5rem;}
+  .towns span{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:0.4rem 0.9rem;font-size:0.88rem;}
+
+  /* About */
+  .about{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:2rem 1.5rem;}
+  .about p{margin-bottom:0.8rem;max-width:760px;}
+  .about .sig{font-family:var(--font-display);font-style:italic;color:var(--pluff);font-size:1.1rem;}
+
+  footer{max-width:1100px;margin:3rem auto 0;padding:2rem 1rem 3rem;border-top:1px solid var(--border);color:var(--muted);font-size:0.82rem;}
+  footer p{margin-bottom:0.5rem;}
+  footer a{color:var(--marsh);font-weight:600;text-decoration:none;}
+
+  @media (max-width:720px){
+    .band{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="eyebrow">Berkeley County, South Carolina</p>
+  <h1>Living well, saving more &amp; <em>growing together</em> in Berkeley County</h1>
+  <p>A neighbor-run hub for grocery deals, smart shopping, insurance help, local happenings and homestead living, from Goose Creek to Moncks Corner and everywhere in between.</p>
+  <div class="cta-row">
+    <a class="btn primary" href="https://www.isaveshoppingonline.com/isaveshoppingonline-weekly-deals.html">🛒 This Week's Deal Drop</a>
+    <a class="btn ghost" href="#hub">Explore the Hub ↓</a>
+  </div>
+</header>
+
+<main>
+
+  <section id="hub">
+    <div class="section-head"><h2>What You'll Find Here</h2><div class="rule"></div></div>
+    <div class="hub">
+      <a class="hub-card" style="--accent:var(--sun)" href="https://www.isaveshoppingonline.com/isaveshoppingonline-weekly-deals.html">
+        <span class="icon">💰</span>
+        <h3>Money Saving</h3>
+        <p>Every week I compare the ads at Publix, Food Lion, Aldi, Lidl, Harris Teeter, Lowes Foods and Piggly Wiggly, so you know where to shop before you go.</p>
+        <span class="go">See this week's deals →</span>
+      </a>
+      <a class="hub-card" style="--accent:var(--tide)" href="https://www.isaveshoppingonline.com">
+        <span class="icon">🛍️</span>
+        <h3>Smart Shopping</h3>
+        <p>Cashback tools, savings websites, a seasonal deal calendar and 52 ways to stretch your dollar.</p>
+        <span class="go">Visit iSave Shopping →</span>
+      </a>
+      <a class="hub-card" style="--accent:var(--marsh)" href="https://lllloblollymultiservices.com/">
+        <span class="icon">🛡️</span>
+        <h3>Insurance</h3>
+        <p>Coverage questions answered in plain language, plus help protecting your family, home and business.</p>
+        <span class="go">L&amp;L Loblolly Multi Services →</span>
+      </a>
+      <a class="hub-card" style="--accent:var(--pluff)" href="#events">
+        <span class="icon">📅</span>
+        <h3>Local Events</h3>
+        <p>Markets, festivals, free family fun and community happenings across the county.</p>
+        <span class="tag">Calendar coming soon</span>
+        <span class="go">Submit an event →</span>
+      </a>
+      <a class="hub-card" style="--accent:var(--marsh)" href="https://lakyshiadgodfrey.com/lifeskills-homestead.html">
+        <span class="icon">🌱</span>
+        <h3>Homestead &amp; Keeping</h3>
+        <p>Gardening, preserving, cooking from scratch and the life skills that make a home run smoother and cheaper.</p>
+        <span class="go">LifeSkills Homestead →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="dealdrop">
+    <div>
+      <h2 id="dealdrop">🛒 The Weekly Deal Drop</h2>
+      <p>New store ads come out every Wednesday. I check them all and post the winners: the cheapest protein, produce, drinks and best BOGOs in Berkeley County.</p>
+      <a class="btn" href="https://www.isaveshoppingonline.com/isaveshoppingonline-weekly-deals.html">Get this week's list</a>
+    </div>
+    <ul>
+      <li><span>🍗</span><span>The cheapest chicken, beef and pork, compared store by store</span></li>
+      <li><span>🥬</span><span>Seasonal produce at its best prices</span></li>
+      <li><span>🎁</span><span>BOGOs worked out to the real price per item</span></li>
+      <li><span>🥤</span><span>Soda, coffee and drink deals</span></li>
+    </ul>
+  </section>
+
+  <section id="events">
+    <div class="section-head"><h2>Local Events</h2><div class="rule"></div></div>
+    <p class="lede">The community calendar is coming soon. Hosting a market, fundraiser, class or free family event in Berkeley County? Send it in and I'll help spread the word.</p>
+    <a class="btn" style="background:var(--pluff);color:#fff;" href="https://lakyshiadgodfrey.com/contact.html">Submit an event</a>
+  </section>
+
+  <section id="towns">
+    <div class="section-head"><h2>Serving All of Berkeley County</h2><div class="rule"></div></div>
+    <div class="towns">
+      <span>Goose Creek</span><span>Moncks Corner</span><span>Hanahan</span><span>Summerville (Berkeley side)</span>
+      <span>Ladson</span><span>Daniel Island</span><span>St. Stephen</span><span>Bonneau</span>
+      <span>Pinopolis</span><span>Cross</span><span>Huger</span><span>Jamestown</span><span>Cordesville</span>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-head"><h2>About</h2><div class="rule"></div></div>
+    <div class="about">
+      <p>I'm LaKyshia D. Godfrey, a Berkeley County neighbor, entrepreneur and lifelong learner who loves helping families keep more of their money and get more out of their community.</p>
+      <p>This site brings my local work together in one place: saving on groceries, shopping smarter, getting the right insurance, finding things to do and living a more self-reliant, homestead life.</p>
+      <p class="sig">— LaKyshia</p>
+      <p style="margin-top:1rem;"><a class="btn" style="background:var(--marsh);color:#F4F1E6;" href="https://lakyshiadgodfrey.com/contact.html">Let's connect</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Godfrey for Berkeley County is a community resource and lifestyle hub. It is not affiliated with Berkeley County Government or any political campaign.</p>
+  <p>Deal prices are compiled from public weekly ads and vary by store, so always confirm in your store's app before shopping.</p>
+  <p>&copy; 2026 LaKyshia D. Godfrey · <a href="https://lakyshiadgodfrey.com">lakyshiadgodfrey.com</a> · <a href="https://www.isaveshoppingonline.com">iSave Shopping</a> · <a href="https://lllloblollymultiservices.com/">L&amp;L Loblolly Multi Services</a></p>
+</footer>
+
+</body>
+</html>
