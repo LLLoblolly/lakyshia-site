@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brother Printer Reset Guide | LaKyshia D. Godfrey</title>
+<meta name="description" content="Free step-by-step guide to clear the Brother 'Ink Absorber Full' (Error 46) purge counter, drum counter and toner warnings — no paid keys, no sketchy downloads.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B140E; --bg-card:#132018; --bg-card-hover:#182A1F;
+    --gold:#C9A227; --gold-soft:#E0C165; --sage:#8FAF95;
+    --text:#F2F5EF; --text-muted:#A7BBAA; --warn:#E8A06A;
+    --border:rgba(143,175,149,0.15);
+    --font-display:'Fraunces', serif; --font-body:'DM Sans', sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:var(--font-body);
+    background:
+      radial-gradient(ellipse 80% 55% at 50% 0%, rgba(74,47,107,0.28), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 90% 100%, rgba(79,122,92,0.18), transparent 60%),
+      var(--bg);
+    color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased; padding-bottom:4rem;
+  }
+  a{color:inherit;}
+  header{max-width:760px;margin:0 auto;padding:3rem 1rem 2rem;text-align:center;}
+  .back-link{display:inline-block;font-size:0.85rem;font-weight:600;color:var(--sage);text-decoration:none;margin-bottom:2rem;}
+  .back-link:hover{color:var(--gold-soft);}
+  .eyebrow{font-size:0.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:0.9rem;}
+  h1{font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,6vw,3rem);margin-bottom:1rem;}
+  h1 em{font-style:italic;color:var(--gold);}
+  header p{color:var(--text-muted);max-width:580px;margin:0 auto;}
+  main{max-width:760px;margin:0 auto;padding:0 1rem;}
+  h2{font-family:var(--font-display);font-weight:600;font-size:1.35rem;margin:2.5rem 0 1rem;}
+  .card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.25rem 1.4rem;margin-bottom:1rem;}
+  .warn{border-color:rgba(232,160,106,0.45);}
+  .warn strong{color:var(--warn);}
+  .choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.75rem;}
+  .choice{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:1rem;text-align:left;color:var(--text);font:inherit;cursor:pointer;transition:border-color .2s,background .2s;}
+  .choice:hover{border-color:var(--sage);background:var(--bg-card-hover);}
+  .choice.active{border-color:var(--gold);background:var(--bg-card-hover);}
+  .choice b{display:block;font-size:0.98rem;margin-bottom:0.25rem;}
+  .choice span{font-size:0.82rem;color:var(--text-muted);}
+  ol.steps{list-style:none;counter-reset:s;}
+  ol.steps li{counter-increment:s;position:relative;padding:0.9rem 0 0.9rem 2.6rem;border-bottom:1px solid var(--border);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:0.85rem;width:1.8rem;height:1.8rem;border-radius:50%;background:linear-gradient(135deg,var(--gold),#A9821E);color:#1B1204;font-weight:700;font-size:0.85rem;display:flex;align-items:center;justify-content:center;}
+  ol.steps li.done{opacity:0.5;}
+  ol.steps label{display:flex;gap:0.6rem;align-items:flex-start;cursor:pointer;}
+  ol.steps input{margin-top:0.35rem;accent-color:var(--gold);}
+  code,kbd{font-family:ui-monospace,Menlo,monospace;background:rgba(201,162,39,0.15);color:var(--gold-soft);padding:0.1rem 0.4rem;border-radius:6px;font-size:0.9em;}
+  .note{font-size:0.85rem;color:var(--text-muted);margin-top:0.75rem;}
+  .hidden{display:none;}
+  ul.plain{padding-left:1.2rem;color:var(--text-muted);}
+  ul.plain li{margin:0.35rem 0;}
+  ul.plain b{color:var(--text);}
+  footer{max-width:760px;margin:3rem auto 0;padding:0 1rem;font-size:0.8rem;color:var(--text-muted);text-align:center;}
+</style>
+</head>
+<body>
+<header>
+  <a class="back-link" href="index.html">&larr; Back home</a>
+  <div class="eyebrow">Free Fix-It Guide</div>
+  <h1>Brother Printer <em>Reset</em> Guide</h1>
+  <p>Clear "Ink Absorber Full" / Error 46, drum counters and toner lockouts on Brother printers — using the printer's own built-in menus. No paid reset keys. Nothing to download.</p>
+</header>
+
+<main>
+  <div class="card warn">
+    <strong>Read this first.</strong> Brother's waste-ink counter exists because a real sponge inside the printer is soaking up purged ink. Resetting the counter does not empty the sponge. If it is truly saturated, ink can leak onto your desk or the printer's electronics. Before you reset, do one of these: replace the absorber pads, clean them out, or fit an external waste-ink bottle. Resetting is safest when the count is high but the pads are still mostly dry.
+  </div>
+
+  <h2>1. What does your printer say?</h2>
+  <div class="choices" id="problem">
+    <button class="choice" data-path="ink-keys"><b>Ink Absorber Full / Error 46</b><span>Inkjet with buttons and a small text screen (MFC-J, DCP-J)</span></button>
+    <button class="choice" data-path="ink-touch"><b>Ink Absorber Full / Error 46</b><span>Inkjet with a touchscreen</span></button>
+    <button class="choice" data-path="drum"><b>Replace Drum / Drum End Soon</b><span>Laser printer (HL-L, MFC-L, DCP-L)</span></button>
+    <button class="choice" data-path="toner"><b>Replace Toner (won't print)</b><span>Laser printer that stops even though there is toner left</span></button>
+  </div>
+
+  <section id="steps-wrap" class="hidden">
+    <h2 id="steps-title">2. Steps</h2>
+    <div class="card"><ol class="steps" id="steps"></ol><p class="note" id="steps-note"></p></div>
+  </section>
+
+  <h2>If it doesn't work</h2>
+  <div class="card">
+    <ul class="plain">
+      <li><b>Wrong button combo?</b> The way you get into maintenance mode changes between model years. Search for <em>"[your model] service manual maintenance mode"</em>. Brother's service manuals spell it out.</li>
+      <li><b>No PURGE line under code 80?</b> Some models call it <code>FLUSH</code> or list several purge counters. Reset each one with the same code.</li>
+      <li><b>Error comes back right away?</b> The printer may be detecting a real fault, such as a jammed carriage or a failing pump, rather than reading a counter. Get a repair quote.</li>
+      <li><b>Stuck in maintenance mode?</b> Enter <code>99</code> or turn the power off and on.</li>
+    </ul>
+  </div>
+</main>
+
+<footer>Not affiliated with or endorsed by Brother Industries. Brother is a trademark of its owner. You use these procedures at your own risk. Maintenance mode is meant for service technicians, so change only what the steps say.</footer>
+
+<script>
+const PATHS = {
+  "ink-keys": {
+    title: "2. Reset the purge counter (button models)",
+    steps: [
+      "Turn the printer on and wait until the screen is idle (no error dialog in progress).",
+      "Press <kbd>Menu</kbd>, then <kbd>Black Start</kbd> (or <kbd>Mono Start</kbd>).",
+      "Press the <kbd>▲ Up</kbd> arrow 4 times. The screen should show <code>MAINTENANCE</code>.<br><span class='note'>Older models: unplug the printer, then hold <kbd>Menu</kbd> while you plug it back in.</span>",
+      "On the number pad, enter <code>80</code>. The screen starts listing the machine's counters.",
+      "Press <kbd>▲</kbd>/<kbd>▼</kbd> until you see <code>PURGE:xxxxx</code>.",
+      "While that line is showing, enter <code>2783</code>. The counter drops to <code>00000</code>.",
+      "If your model also shows <code>FLUSH</code>, scroll to it and enter <code>2783</code> again.",
+      "Press <kbd>Stop/Exit</kbd>, then enter <code>99</code> to leave maintenance mode. The printer restarts."
+    ],
+    note: "These steps work on most MFC-J and DCP-J button models from roughly 2008 onward. The menu wording varies a little between models."
+  },
+  "ink-touch": {
+    title: "2. Reset the purge counter (touchscreen models)",
+    steps: [
+      "Start from the Home screen with nothing printing.",
+      "Tap <kbd>Settings</kbd> (wrench) or <kbd>Ink</kbd>. On many models a hidden number pad opens when you then tap the blank lower corner of the screen, or press <kbd>Home</kbd> → <kbd>Settings</kbd> → <kbd>Home</kbd> → <kbd>Settings</kbd>.",
+      "On the number pad, enter <code>*2864</code>. The screen should show <code>MAINTENANCE</code>.",
+      "Enter <code>80</code> to view the counters.",
+      "Scroll until you see <code>PURGE:xxxxx</code>, then enter <code>2783</code>. The counter should drop to zero.",
+      "If your model also shows <code>FLUSH</code>, scroll to it and enter <code>2783</code> again.",
+      "Enter <code>99</code> to leave maintenance mode."
+    ],
+    note: "The hidden-number-pad step differs most between touchscreen models. If it doesn't appear, look up your exact model's service manual. Codes 80 / 2783 / 99 are the same once you're in maintenance mode."
+  },
+  "drum": {
+    title: "2. Reset the drum counter (laser)",
+    steps: [
+      "<b>Only do this after you have installed a new drum.</b> Clearing the counter on a worn drum gives you streaky, faded prints.",
+      "With the printer on, open the front cover.",
+      "<b>Button models:</b> press and hold <kbd>OK</kbd> (or <kbd>Go</kbd>) for about 4 seconds, until <code>Drum Clear?</code> or <code>Reset Drum</code> appears. Choose <kbd>▲ / Yes</kbd>.",
+      "<b>Touchscreen models:</b> press and hold <kbd>Home</kbd> for about 5 seconds, until the drum reset option appears, then tap <kbd>Yes</kbd>.",
+      "Close the front cover."
+    ],
+    note: "This is Brother's official procedure from the user manual. If several reset options appear, pick only the Drum one."
+  },
+  "toner": {
+    title: "2. Keep printing past 'Replace Toner'",
+    steps: [
+      "Press <kbd>Menu</kbd> (or <kbd>Settings</kbd>).",
+      "Go to <code>General Setup</code> → <code>Replace Toner</code> (on some models it's under <code>Toner</code>).",
+      "Change it from <code>Stop</code> to <code>Continue</code>, then press <kbd>OK</kbd>.",
+      "Print until the text actually fades, then swap the cartridge."
+    ],
+    note: "Brother's own menu setting, not a hack. Print quality is not guaranteed once the printer has said the toner is out."
+  }
+};
+const wrap = document.getElementById('steps-wrap');
+document.querySelectorAll('.choice').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const p = PATHS[btn.dataset.path];
+  document.getElementById('steps-title').textContent = p.title;
+  document.getElementById('steps-note').textContent = p.note;
+  document.getElementById('steps').innerHTML = p.steps.map(s =>
+    `<li><label><input type="checkbox"><span>${s}</span></label></li>`).join('');
+  document.querySelectorAll('#steps input').forEach(cb => cb.addEventListener('change', e =>
+    e.target.closest('li').classList.toggle('done', e.target.checked)));
+  wrap.classList.remove('hidden');
+  wrap.scrollIntoView({behavior:'smooth', block:'start'});
+}));
+</script>
+</body>
+</html>
