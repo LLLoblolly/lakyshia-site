@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark" />
+<meta name="description" content="Every woman who won a U.S. Senate or governor's race in 2026, plus all newly elected women in the U.S. House, with their platforms and a South Carolina spotlight." />
+<link rel="icon" href="data:," />
+<title>Women Elected in 2026 — Their Platforms | LaKyshia D. Godfrey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0e1913; --surface:#15241b; --surface2:#1b2d22; --ink:#f1ede2; --ink2:#a9b8ad; --line:#2b4033;
+  --navy:#9fd0ac; --gold:#d4af5f; --gold-bg:#2b2616; --purple:#a58be0;
+  --dem:#86aeee; --dem-bg:#1c2c4a; --rep:#ee9494; --rep-bg:#3d2323;
+  --chip:#1f3226;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;line-height:1.55}
+a{color:var(--navy)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;line-height:1.2;margin:0}
+.site-head{border-bottom:1px solid var(--line);background:#0a120d}
+.site-head-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+.brand{font-family:"Fraunces",serif;font-weight:700;color:var(--ink);text-decoration:none;font-size:18px}
+.brand span{display:block;font-family:"DM Sans",sans-serif;font-weight:500;font-size:12px;letter-spacing:.08em;color:var(--gold)}
+.site-nav{display:flex;gap:6px;flex-wrap:wrap}
+.site-nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:14px;padding:7px 12px;border-radius:999px}
+.site-nav a:hover{background:var(--chip)}
+.back{display:inline-block;margin-top:16px;font-size:14px;font-weight:600;text-decoration:none}
+.back:hover{text-decoration:underline}
+.hero{border-bottom:3px double var(--line);padding:26px 0 28px}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.hero h1{font-size:clamp(30px,5.4vw,52px);margin:12px 0 14px;max-width:820px}
+.hero p.lede{font-size:clamp(16px,2vw,19px);color:var(--ink2);max-width:760px;margin:0}
+.status-note{margin-top:16px;background:var(--gold-bg);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:14px;max-width:820px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:28px 0 6px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.stat b{display:block;font-family:"Fraunces",serif;font-size:38px;line-height:1;color:var(--gold)}
+.stat span{display:block;margin-top:6px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink2)}
+.stat small{display:block;margin-top:4px;font-size:13px;color:var(--ink2)}
+nav.tabs{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 0}
+.tabs-inner{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tabs a{text-decoration:none;color:var(--ink);font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px;background:var(--chip)}
+.tabs a:hover{outline:2px solid var(--gold)}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 6px;align-items:center}
+.controls input[type=search]{flex:1 1 240px;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:16px;font-family:inherit}
+.controls input[type=search]::placeholder{color:var(--ink2)}
+.pbtn{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:10px 16px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit}
+.pbtn[aria-pressed=true]{background:var(--gold);color:#0e1913;border-color:var(--gold)}
+.count-line{font-size:14px;color:var(--ink2);margin:8px 0 0}
+section.block{padding:34px 0 8px}
+section.block>h2{font-size:clamp(24px,3.4vw,32px)}
+section.block>.sub{color:var(--ink2);max-width:760px;margin:8px 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.card h3{font-size:19px}
+.meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.badge{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.badge.dem{background:var(--dem-bg);color:var(--dem)}
+.badge.rep{background:var(--rep-bg);color:var(--rep)}
+.tag{font-size:12px;font-weight:600;background:var(--chip);padding:3px 9px;border-radius:999px;color:var(--ink2)}
+.first{font-size:13px;font-weight:700;color:var(--gold);background:var(--gold-bg);border-radius:8px;padding:8px 10px}
+.card ul{margin:0;padding-left:18px;font-size:14.5px}
+.card ul li{margin:4px 0}
+.card .sig{font-size:14px;border-top:1px dashed var(--line);padding-top:10px}
+.card .sig b{color:var(--purple)}
+.themes{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.theme{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.theme h3{font-size:18px;margin-bottom:10px}
+.theme ul{margin:0;padding-left:18px;font-size:15px}
+.theme li{margin:5px 0}
+.sc{background:var(--surface2);border:1px solid var(--line);border-radius:16px;padding:26px}
+.sc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px}
+.sc h3{font-size:17px;margin-bottom:6px}
+.sc p,.sc li{font-size:15px}
+.sc ul{margin:6px 0;padding-left:18px}
+.uncalled{background:var(--surface);border:1px dashed var(--gold);border-radius:14px;padding:22px}
+.uncalled ul{margin:8px 0 0;padding-left:18px;font-size:15px}
+.uncalled li{margin:5px 0}
+footer{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 30px;font-size:13.5px;color:var(--ink2)}
+footer ul{padding-left:18px}
+.site-foot{border-top:1px solid var(--line);background:#0a120d;margin-top:0;padding:22px 0 34px;text-align:center;font-size:13.5px;color:var(--ink2)}
+.site-foot p{margin:4px 0}
+.hidden{display:none!important}
+.empty{border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--ink2)}
+@media (max-width:720px){
+  .stats{grid-template-columns:1fr 1fr}
+  .themes,.sc-grid{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap site-head-inner">
+    <a class="brand" href="/">LaKyshia D. Godfrey <span>A Polymath&rsquo;s Prism</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="/#home">Home</a>
+      <a href="/#services">Services</a>
+      <a href="/#homestead">Homestead</a>
+      <a href="/#universe">Universe</a>
+      <a href="/#planner">Planner</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap"><a class="back" href="/">&larr; Back to LaKyshiaDGodfrey.com</a></div>
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker">Election Day · Tuesday, November 3, 2026</div>
+    <h1>Women Elected in 2026 — Their Plans &amp; Platforms</h1>
+    <p class="lede">Who won, where, and what each woman actually campaigned on — every woman who won a U.S. Senate or governor's race, plus all 36 women newly elected to the U.S. House, with a spotlight on South Carolina.</p>
+    <div class="status-note"><strong>Read this first:</strong> All results are <strong>unofficial projections / media calls as of November 9, 2026</strong> (updated from the original Nov. 5 version). State certifications were still under way. Since Nov. 5, AP has called NY-17 and SC-01 for the women below, and called WA-04 for Amanda McKinney (R), who is now added. The remaining still-uncalled races — Senate and governor contests in Alaska, Mississippi and Kansas — are listed at the bottom.</div>
+    <div class="stats">
+      <div class="stat"><b>7</b><span>Senate winners</span><small>3 Democrats · 4 Republicans</small></div>
+      <div class="stat"><b>15</b><span>Governor winners</span><small>12 Democrats · 3 Republicans</small></div>
+      <div class="stat"><b>36</b><span>New House members</span><small>33 Democrats · 3 Republicans</small></div>
+      <div class="stat"><b>17</b><span>Women governors in 2027</span><small>A record — includes 2 not up this year</small></div>
+    </div>
+  </header>
+</div>
+
+<nav class="tabs" aria-label="Sections">
+  <div class="wrap tabs-inner">
+    <a href="#themes">Big Themes</a>
+    <a href="#senate">Senate · 7</a>
+    <a href="#governors">Governors · 15</a>
+    <a href="#house">House · 36 new</a>
+    <a href="#sc">South Carolina</a>
+    <a href="#uncalled">Still Uncalled</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <section class="block" id="themes">
+    <h2>The big themes</h2>
+    <p class="sub">Two very different playbooks won on Tuesday. Here's what each side's women winners ran on, drawn from their campaigns.</p>
+    <div class="themes">
+      <div class="theme">
+        <h3>Democratic winners</h3>
+        <ul>
+          <li><strong>Affordability:</strong> housing, childcare, energy bills, and repealing tariffs blamed for raising prices</li>
+          <li><strong>Healthcare:</strong> restore Affordable Care Act subsidies, reverse the 2025 Medicaid cuts, lower drug prices — with a split between Medicare for All and a public option</li>
+          <li><strong>Abortion rights:</strong> restore <em>Roe</em>, protect contraception and IVF</li>
+          <li><strong>Anti-corruption:</strong> ban congressional stock trading and corporate PAC money — the single most repeated promise among new House members</li>
+          <li><strong>Data centers:</strong> moratoriums or strict conditions so growth doesn't raise residents' power and water costs</li>
+          <li>Several democratic-socialist-aligned newcomers also ran on <strong>Medicare for All and abolishing ICE</strong></li>
+        </ul>
+      </div>
+      <div class="theme">
+        <h3>Republican winners</h3>
+        <ul>
+          <li><strong>Tax cuts:</strong> lower state and federal taxes, including deductions on tips, overtime, and Social Security</li>
+          <li><strong>Border &amp; immigration:</strong> tougher enforcement, expanded cooperation with federal immigration authorities, no sanctuary policies</li>
+          <li><strong>Energy:</strong> expand coal, oil, gas, and nuclear production; faster permitting</li>
+          <li><strong>Education:</strong> school choice and vouchers, parents' rights, local control</li>
+          <li><strong>Pro-life positions</strong> and defense of the Second Amendment</li>
+          <li><strong>Public safety:</strong> backing law enforcement, tougher bail and drunk-driving laws</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="controls" role="group" aria-label="Filter the directory">
+    <input type="search" id="q" placeholder="Search by name, state, or issue — try “childcare”, “data centers”, “stock trading”…" aria-label="Search by name, state, or issue" />
+    <button class="pbtn" data-party="all" aria-pressed="true">All parties</button>
+    <button class="pbtn" data-party="D" aria-pressed="false">Democrats</button>
+    <button class="pbtn" data-party="R" aria-pressed="false">Republicans</button>
+  </div>
+  <p class="count-line" id="countLine" aria-live="polite"></p>
+
+  <section class="block" id="senate">
+    <h2>U.S. Senate — 7 women won</h2>
+    <p class="sub">At least 23 women will serve in the new Senate, down from 27 (Center for American Women and Politics). Two more women's races — Alaska and Mississippi — were still uncalled on Nov. 5.</p>
+    <div class="grid" id="senateGrid"></div>
+  </section>
+
+  <section class="block" id="governors">
+    <h2>Governors — 15 women won</h2>
+    <p class="sub">Six incumbents re-elected, eight won open seats, and one — Gina Hinojosa of Texas — defeated a sitting governor. With two women not up for election this year, a record 17 women will serve as governors in 2027.</p>
+    <div class="grid" id="govGrid"></div>
+  </section>
+
+  <section class="block" id="house">
+    <h2>U.S. House — 36 women newly elected</h2>
+    <p class="sub">New members of the 120th Congress: 33 first-time members plus three returning former members (marked † — new to this Congress, not first-time members of Congress). Overall, CAWP and CNN projected on Nov. 9 that at least 136 women will serve in the House — a record — though a few races were still uncalled. Two non-voting delegates were also newly elected women: Alicia Limtiaco (D, Guam) and Janelle Sarauw (D, U.S. Virgin Islands).</p>
+    <div class="grid" id="houseGrid"></div>
+    <div class="empty hidden" id="emptyState">No one matches that search and filter. Try a different name, state, or issue.</div>
+  </section>
+
+  <section class="block" id="sc">
+    <h2>South Carolina spotlight</h2>
+    <p class="sub">Two women won federal races in South Carolina — including a historic Senate first — while the governorship went to a man. Figures are unofficial until the State Election Commission certifies; AP called SC-01 on Nov. 6 after county certification.</p>
+    <div class="sc">
+      <div class="sc-grid">
+        <div>
+          <h3>Governor: Alan Wilson (R) — no woman winner</h3>
+          <p>Wilson, the state's attorney general, won with <strong>1,050,190 votes (51.6%)</strong> over Jermaine Johnson (D, 47.1%). AP called the race at 12:35 a.m. on Nov. 4. He succeeds term-limited Gov. Henry McMaster.</p>
+          <h3 style="margin-top:18px">U.S. Senate: Annie Andrews (D) ★</h3>
+          <p>Andrews won <strong>~51.1% to ~46.7%</strong> over appointed Sen. Darline Graham (R) in a woman-vs.-woman race — becoming the <strong>first woman elected to the U.S. Senate from South Carolina</strong>. Her full platform is in her Senate card above.</p>
+        </div>
+        <div>
+          <h3>U.S. House — all seven districts</h3>
+          <ul>
+            <li><strong>SC-01: Nancy Lacore (D)</strong> — new woman winner. Beat Jenny Honeycutt (R) 49.65%–48.64% (~3,300 votes), a margin that triggered no recount. AP called the race on Nov. 6 after county certification, and her 1.01-point margin held. Outgoing Rep. Nancy Mace congratulated her on Nov. 4. Platform in her House card above.</li>
+            <li><strong>SC-02:</strong> Joe Wilson (R), incumbent re-elected</li>
+            <li><strong>SC-03: Sheri Biggs (R)</strong> — woman incumbent re-elected (not a new member)</li>
+            <li><strong>SC-04:</strong> William Timmons (R), incumbent re-elected</li>
+            <li><strong>SC-05:</strong> Wes Climer (R), new member, won the open Norman seat</li>
+            <li><strong>SC-06:</strong> James Clyburn (D), incumbent re-elected</li>
+            <li><strong>SC-07:</strong> Russell Fry (R), incumbent re-elected</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="uncalled">
+    <h2>Still uncalled on Nov. 9 — not counted above</h2>
+    <div class="uncalled">
+      <p style="margin:0">As of the latest reports on Nov. 9, these were still uncalled. If any resolve for the woman, the totals above change. <strong>Resolved since Nov. 5:</strong> NY-17 (Cait Conley) and SC-01 (Nancy Lacore) were called by AP; WA-04 was called for Amanda McKinney (R), now counted above; and in AZ-05, Elizabeth Lee (D) lost to Mark Lamb (R) — not elected.</p>
+      <ul>
+        <li><strong>Senate, Alaska:</strong> Mary Peltola (D) led Sen. Dan Sullivan (R) by roughly 600 votes in AP's count on Nov. 8, with about a quarter of ballots still to be counted. Ranked-choice tabulation is scheduled Nov. 18. The race is also tangled in a ballot controversy over a second candidate named Dan Sullivan.</li>
+        <li><strong>Senate, Mississippi:</strong> Scott Colom (D) led Sen. Cindy Hyde-Smith (R) by roughly 2,500 votes (49.1%–48.8%). Mississippi has no recount procedure; counties' certified results were due Nov. 13.</li>
+        <li><strong>Governor, Kansas:</strong> Cindy Holscher (D) led Ty Masterson (R) by about 7,600 votes (roughly 0.7 point) after the Nov. 6 mail-ballot deadline. Provisional ballots (state deadline Nov. 10) and a mandatory close-race audit were still pending, Masterson had not conceded, and AP had not called it. Holscher declared victory Nov. 4.</li>
+        <li><strong>Governor, Alaska:</strong> Bernadette Wilson (R) trailed Jonathan Kreiss-Tomkins (D) by about 20 points in first-choice votes (roughly 29% to 49%) with about 74% counted; a preliminary ranked-choice tally showed 55%–45%. Tabulation is set for Nov. 18, with certification due Nov. 25. I found no AP call; one aggregator (MultiState) lists Kreiss-Tomkins as the winner while NBC still listed it too early to call — a discrepancy, noted not resolved.</li>
+        <li><strong>Louisiana runoffs (Dec. 12):</strong> Pat Moore (D, LA-05) and Chauna Banks (D, LA-06) advanced to runoffs — not elected on Nov. 3.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>How this was put together:</strong> First researched November 5, 2026 and updated November 9, 2026 with AP and media calls, from campaign websites and stated issue pages, AP and Decision Desk HQ results, the Center for American Women and Politics (CAWP) counts, Ballotpedia, and state and local news coverage. Platform summaries reflect what each candidate said she would do — campaign promises, not enacted policy. Two entries rest on thinner sourcing and say so on their cards (Christina Hines, MI-10; Katy Padilla Stout, TX-23).</p>
+    <p><strong>Key list sources:</strong></p>
+    <ul>
+      <li><a href="https://www.thewrap.com/media-platforms/politics/midterms-women-candidates-who-won-2026/" target="_blank" rel="noopener">CAWP counts via TheWrap — women candidates who won 2026</a></li>
+      <li><a href="https://www.multistate.us/resources/governors-2026-state-election-results" target="_blank" rel="noopener">MultiState — 2026 governors results</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/List_of_new_members_of_the_120th_United_States_Congress" target="_blank" rel="noopener">Wikipedia — List of new members of the 120th U.S. Congress</a></li>
+      <li><a href="https://votes.decisiondeskhq.com/elections/2026-11-03/south-carolina" target="_blank" rel="noopener">Decision Desk HQ — South Carolina results</a></li>
+      <li><a href="https://apnews.com/projects/elections-2026/?ap_doc=ap%2Fcs1%2F20261103%2Fl" target="_blank" rel="noopener">AP — 2026 elections hub</a></li>
+      <li><a href="https://www.cnn.com/2026/11/09/politics/record-women-congress-midterm-election-vis" target="_blank" rel="noopener">CNN — A record number of women will serve in the next Congress (Nov. 9)</a></li>
+      <li><a href="https://scdailygazette.com/2026/11/04/nancy-lacore-declares-victory-in-scs-1st-congressional-district/" target="_blank" rel="noopener">SC Daily Gazette — Nancy Lacore, SC-01</a></li>
+      <li><a href="https://www.washingtonpost.com/politics/2026/11/08/with-counting-still-underway-trump-continues-claim-gop-win-alaska/" target="_blank" rel="noopener">Washington Post — Alaska Senate count (Nov. 8)</a></li>
+      <li><a href="https://www.newsweek.com/scott-colom-cindy-hyde-smith-update-mississippi-senate-race-key-deadline-12688199" target="_blank" rel="noopener">Newsweek — Mississippi Senate update</a></li>
+      <li><a href="https://www.ksn.com/news/your-local-election-hq/kansas-governor-election-results-2/" target="_blank" rel="noopener">KSN — Kansas governor results</a></li>
+    </ul>
+    <p>Individual platform sources are the campaign sites and outlets cited in the underlying research (NPR Illinois, Tallahassee Democrat, Arizona Republic, Providence Journal, Detroit Free Press, and others). Results remain unofficial until each state certifies.</p>
+  </footer>
+</div>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>&copy; 2026 LaKyshia D. Godfrey. All rights reserved.</p>
+    <p><a href="https://lakyshiadgodfrey.com">lakyshiadgodfrey.com</a> &middot; <a href="/contact.html">Contact</a></p>
+  </div>
+</footer>
+
+<script>
+var SENATE=[
+{name:"Juliana Stratton",state:"Illinois",party:"D",seat:"Open seat — succeeds Sen. Dick Durbin (retiring)",points:["$25 federal minimum wage; Medicare for All / universal healthcare","Middle-class tax cut paid for by higher taxes on incomes over $1M; takes no corporate PAC money","Abolish ICE; pathway to citizenship, including Dreamers","Reproductive freedom, including Black maternal health"]},
+{name:"Peggy Flanagan",state:"Minnesota",party:"D",seat:"Open seat — succeeds Sen. Tina Smith (retiring)",first:"First Native American woman elected to the U.S. Senate",points:["Medicare for All, lower prescription-drug costs, ban prior authorization","$17 minimum wage, paid family leave, workers' rights; universal childcare and pre-K","Affordable housing; limit corporate ownership of homes","Tribal sovereignty and Indian Health Service funding; assault-weapons ban; “rip ICE apart,” pathway to citizenship"]},
+{name:"Annie Andrews",state:"South Carolina",party:"D",seat:"Defeated appointed Sen. Darline Graham (R)",first:"First woman elected to the U.S. Senate from South Carolina",sig:"“Patients and Prices” healthcare plan",points:["Healthcare: public option (explicitly rejects Medicare for All), protect/expand Medicaid and Medicare, $35 insulin cap, expand Medicare drug-price negotiation, keep rural hospitals open","Affordability on groceries, gas, housing, childcare; two-year moratorium on new data centers","Gun policy: universal background checks, safe storage, red-flag laws, ban on “weapons of war” — while supporting lawful Second Amendment ownership","Restore Roe, protect contraception and IVF; fully fund public schools and teacher pay; no tax hikes under $500k; ban congressional stock trading, term limits"]},
+{name:"Ashley Moody",state:"Florida",party:"R",seat:"Appointed incumbent — won special election for the rest of Marco Rubio's term (to 2028)",points:["“America First”: border security and tougher immigration enforcement; expand 287(g) agreements","Law and order — back law enforcement; fight drug trafficking and fraud","Anti-abortion; religious liberty","Tax cuts (deductions on tips/overtime/Social Security), deregulation; HELPER Act homeownership help for first responders/teachers; SAVE America Act voter ID; concealed-carry reciprocity"]},
+{name:"Julia Letlow",state:"Louisiana",party:"R",seat:"Moves from the House to the open Senate seat",sig:"15-point plan",points:["Secure the border; stop fentanyl","Keep taxes low, cut spending and shrink bureaucracy; unleash Louisiana energy","Farmer-first Farm Bill, crop insurance and disaster aid; Delta infrastructure — ports, roads, rural broadband","Parents' rights, school choice, local control; protect Social Security and rural healthcare; PBM reform to lower drug costs; defend life, the Second Amendment, and election integrity"]},
+{name:"Shelley Moore Capito",state:"West Virginia",party:"R",seat:"Re-elected",points:["All-of-the-above energy: coal and natural gas development, carbon capture (45Q / USE IT Act), streamlined permitting","Infrastructure and rural broadband delivery through her committee roles","Rural healthcare and water-infrastructure funding; opioid and NIH funding"]},
+{name:"Harriet Hageman",state:"Wyoming",party:"R",seat:"Open seat — succeeds Sen. Cynthia Lummis (retiring)",points:["Energy dominance: coal, oil, gas, uranium; more coal leasing; oppose federal land restrictions; state management of grizzlies","Cut regulations — Congress, not agencies, should legislate","Border security, Second Amendment, military/veterans; $205M Rural Health Transformation; ratepayer protection against data-center rate hikes; Farm Bill and permitting priorities"]}
+];
+var GOVS=[
+{name:"Katie Hobbs",state:"Arizona",party:"D",seat:"Incumbent, re-elected",points:["Affordability: groceries, rent, gas, prescription drugs; ~$200M in proposed middle-class tax cuts","Water: bipartisan rural groundwater plan; crack down on out-of-state corporations pumping unchecked","Housing: cut red tape, starter homes for Arizonans rather than investors, Housing Acceleration Fund","Education: renew Prop 123 land-trust funding for teacher raises; crack down on ESA voucher waste/fraud; border security and apprenticeships"]},
+{name:"Sarah Huckabee Sanders",state:"Arkansas",party:"R",seat:"Incumbent, re-elected",points:["Continue phasing out the state income tax — four rounds of cuts plus grocery-tax elimination in her first term","Education: defend the LEARNS Act ($50k minimum teacher salary, vouchers)","Prisons: build the new Franklin County prison; expand capacity and recidivism programs","Affordable, quality healthcare access (Medicaid expansion delivery undecided); affordability generally"]},
+{name:"Keisha Lance Bottoms",state:"Georgia",party:"D",seat:"New — open seat",first:"First Black woman elected governor in U.S. history",points:["Expand Medicaid (~300,000 more Georgians), end Georgia Pathways; Prescription Drug Savings Board; “Rural Care First” — EMS/mobile/telehealth, maternal and mental health; protect reproductive freedom","Fully fund schools, $60k starting teacher pay, eliminate state income tax for teachers; universal childcare/pre-K; free technical/community college path","Housing: fast-track permitting, housing trust fund, down-payment/renter help, restrict corporate home buying; let localities suspend the grocery sales tax during price spikes"]},
+{name:"Hannah Pingree",state:"Maine",party:"D",seat:"New — open seat",points:["Housing: build more homes; fight private-equity purchases of mobile-home parks","Healthcare: state public option, lower drug costs, primary care, rural hospitals and maternity care","Reduce property taxes; childcare for all","Climate action: heat pumps and home efficiency; data-center moratorium until strong ratepayer/environmental laws are in place"]},
+{name:"Maura Healey",state:"Massachusetts",party:"D",seat:"Incumbent, re-elected",points:["Energy affordability: cut residential electric bills 25% and gas bills 10% (Feb–Mar); oppose utility rate hikes","Housing: build faster (ahead of the 220,000-homes-by-2035 goal pace); $25k down-payment assistance","Taxes: $440-per-dependent child and family credit; doubled senior circuit breaker","Tuition-free community college; $8B 10-year transportation/MBTA bond plan; childcare provider pay equity"]},
+{name:"Jocelyn Benson",state:"Michigan",party:"D",seat:"New — open seat",sig:"“Costs down, wages up, end corruption”",points:["$5,000 caregiver tax credit; Prescription Drug Affordability Board; hospital price transparency; mobile rural health","Free pre-K for all 3-year-olds; expand Rx Kids cash aid to new mothers statewide; $60k starting teacher pay; needs-based school funding","Housing: faster approvals, homebuyer/property-tax credits, bar institutional investors in her first 100 days","Energy: outage credits, grid audit, ban utility political contributions; pause data centers without community/energy safeguards"]},
+{name:"Amy Klobuchar",state:"Minnesota",party:"D",seat:"New — moves from the U.S. Senate",first:"Minnesota's first woman governor",points:["Affordability across healthcare, daycare, and housing; 100,000 new homes by end of term; simpler down-payment help","Lower drug prices via state purchasing/generics; lower premiums; expand reinsurance, telehealth, and rural hospitals","Day-one statewide audit to root out fraud and waste; no tax increases (would like to lower taxes)","Rural economy: farm safety net, E15 markets, broadband, apprenticeships"]},
+{name:"Kelly Ayotte",state:"New Hampshire",party:"R",seat:"Incumbent, re-elected (two-year term)",points:["Workforce housing: 12 housing bills signed; lease state land only for affordable housing","Childcare scholarships ($88M) plus a business childcare tax credit; streamlined provider rules","Public safety: 2025 bail-reform overhaul; tougher drunk-driving laws","Education: special-education funding; free community college for families earning under $100k; supported a data-center moratorium, citing state energy capacity"]},
+{name:"Deb Haaland",state:"New Mexico",party:"D",seat:"New — open seat",first:"First Native American woman elected governor of a state",points:["Affordability: raise the minimum wage (indexed); expand Child Tax Credit and Working Families Tax Credit; up to $500/person rebate from the oil/gas windfall for families under $200k","Healthcare public option; recruit doctors; defend Medicaid/SNAP from federal cuts","Universal early childcare; keep tuition-free college and trade school; literacy plan with bilingual and Native-language support","Overhaul Children, Youth and Families Dept.; day-one order freezing large new data centers; clean energy/public lands, tribal sovereignty"]},
+{name:"Kathy Hochul",state:"New York",party:"D",seat:"Incumbent, re-elected",points:["Pathway to universal childcare (+$1.7B; free care for NYC 2-year-olds; subsidies capped at ~$15/week for eligible families)","“Let Them Build” housing/infrastructure fast-tracking, waiving some environmental reviews","Lower energy bills and consumer protection; public safety","Ban ICE raids in schools and houses of worship without a judicial warrant; AI safety (RAISE Act); one-year moratorium on large AI data centers"]},
+{name:"Amy Acton",state:"Ohio",party:"D",seat:"New — open seat",first:"First woman elected governor of Ohio",sig:"Working Families Tax Cut — her #1 priority",points:["Working Families Tax Cut: EITC plus child credit of $1,000 (ages 0–6) / $500 (ages 7–18), up to $85k income","Healthcare: protect Medicaid, lower premiums and drug prices, alleviate medical debt, price transparency, protect rural and urban hospitals","Fully fund public schools via the Fair School Funding Plan; reform the voucher system; free school meals; affordable childcare/pre-K","Lower utility bills with clean, low-cost energy; protect reproductive freedom; conditional data-center moratorium (centers pay 100% of utility costs, union labor, transparency)"]},
+{name:"Tina Kotek",state:"Oregon",party:"D",seat:"Incumbent, re-elected",points:["Ran on her first-term record: housing/homelessness response (6,286 shelter beds, 2,800 affordable units, prevention for 25,942 households, per her campaign) and faster housing construction","Affordability: three-year pause on new Portland-area local taxes, cancelled freeway tolling, utility-cost and medical-debt laws","Education: early literacy, summer learning, $50M for childcare access","Behavioral health and public safety; faster solar/wind permitting with labor standards"]},
+{name:"Helena Foulkes",state:"Rhode Island",party:"D",seat:"New — open seat",sig:"“Rhode Home” plan",points:["“Rhode Home”: 20,000 homes/apartments via a $1B revolving loan fund paid for by a new +3% marginal tax bracket on income over $1M; tenants' bill of rights","Raise the minimum wage from $17 to $20 by 2030","Strengthen healthcare; navigators for people losing Medicaid; keep doctors in state","Transform education; clean energy (solar/wind) to cut bills; audit Rhode Island Energy; finish the Washington Bridge; support the ocean economy"]},
+{name:"Marsha Blackburn",state:"Tennessee",party:"R",seat:"New — moves from the U.S. Senate",first:"Tennessee's first woman governor",points:["Taxes: oppose a state income tax; back a constitutional amendment banning a state property tax; “DOGE”-style state spending cuts","Universal school choice: extend Education Freedom Scholarships to all families; bell-to-bell cellphone ban; parental rights","Immigration: work with the Trump administration/ICE on deportations; ban sanctuary policies","Public safety (Memphis Safe Task Force); all-of-the-above energy with faster permitting; rural healthcare via freestanding emergency departments"]},
+{name:"Gina Hinojosa",state:"Texas",party:"D",seat:"New — defeated incumbent Gov. Greg Abbott (R)",first:"First Latina governor of Texas",points:["Fully fund public schools, raise teacher pay, end STAAR testing, oppose the ESA “voucher scam”","$1,500 refund check to every Texas household, funded by cutting corporate subsidies/contracts, with savings also used to lower property taxes","Medicaid expansion and healthcare access; sign a repeal of the state abortion ban","Data-center crackdown/moratorium conditions (union-built, no state land sales, protect water and rates); anti-corruption; protect voting and LGBTQ+ rights"]}
+];
+var HOUSE=[
+{name:"JoAnna Mendoza",state:"Arizona",district:"AZ-06",party:"D",note:"Marine veteran; flipped the seat from Rep. Juan Ciscomani (R)",points:["Lower costs for working families; create good-paying jobs; strengthen healthcare access","Protect veterans' benefits; expand rural VA services","Border security plus immigration reform: deport violent criminals, pathway to citizenship; blames tariffs for raising prices"]},
+{name:"Jacqui Irwin",state:"California",district:"CA-26",party:"D",note:"State assemblymember succeeding Rep. Brownley",points:["Housing production and tenant protections; public safety funding; act as a check on the Trump administration","Record run on: strengthening the red-flag gun law, renewing cap-and-trade, cybersecurity, disability savings accounts"]},
+{name:"Angela Gonzales-Torres",state:"California",district:"CA-34",party:"D",note:"Defeated Rep. Jimmy Gomez in the primary; daughter of a deportee",points:["Medicare for All and cancel medical debt; universal childcare; tuition-free public college; Green New Deal","Abolish ICE, pathway to citizenship","Housing as a right (federal vouchers, community land trusts); ban congressional stock trading; tax billionaires"]},
+{name:"Hilda Solis †",state:"California",district:"CA-38",party:"D",note:"Returning former member; former U.S. Secretary of Labor",points:["Affordability: healthcare for seniors, children, and people with disabilities; housing; transportation","Defend the ACA/Medicaid, workers' rights, immigrants, and reproductive rights; environmental justice","Protect FEMA and firefighting resources; fire-insurance reform and expedited rebuilding after wildfires"]},
+{name:"Marni von Wilpert",state:"California",district:"CA-48",party:"D",note:"San Diego city council member; open Issa seat",points:["Lower the cost of living; expand affordable housing and healthcare","Protect reproductive freedom and LGBTQ rights; hold federal immigration officials accountable"]},
+{name:"Melat Kiros",state:"Colorado",district:"CO-01",party:"D",note:"Beat Rep. Diana DeGette in the primary",first:"First Gen Z woman elected to Congress",points:["Her top five, in her words: “Medicare for All. Housing First. Universal child care. Abolishing ICE. And… publicly financed elections.”","Cancel medical debt; break up healthcare monopolies; no corporate PAC money ever","U.S. arms embargo on Israel; accountability for AI/automation job losses; term limits and Supreme Court reform"]},
+{name:"Sydney Gruters",state:"Florida",district:"FL-16",party:"R",note:"Won the open Buchanan seat",points:["Lower the cost of living and fight inflation; curb overdevelopment while addressing affordable homeownership; cut taxes and regulations","Secure the border and stop migrant crime; protect Medicare for seniors and veterans","Pro-life (“defend the unborn”); defend the Second Amendment"]},
+{name:"Pia Dandiya",state:"Florida",district:"FL-22",party:"D",note:"Educator and former principal",points:["Bring down the cost of living: property insurance and housing, cap prescription costs, affordable childcare, end tariffs","Protect Social Security and Medicare; reverse Medicaid cuts; ask the wealthiest to pay their fair share","Fully fund public schools, universal pre-K, apprenticeships; ban congressional stock trading"]},
+{name:"Jasmine Clark",state:"Georgia",district:"GA-13",party:"D",note:"PhD microbiologist and Emory lecturer; seat left open by Rep. David Scott's death",first:"First Black woman PhD scientist elected to Congress",points:["Affordable healthcare and public-health/science funding, including research on diseases that disproportionately affect Black patients; codify privacy in medical decisions (reproductive rights)","Education: lower childcare costs, pre-K for all, protect Title I funding, free school lunch","Gun safety: assault-weapons ban, universal background checks, safe storage; campaign-finance reform, end partisan gerrymandering, ban stock trading; hold ICE accountable"]},
+{name:"Donna Miller",state:"Illinois",district:"IL-02",party:"D",note:"Cook County Commissioner and healthcare consultant",points:["Healthcare access as a signature focus: HIV/AIDS and sickle-cell work, cystic-fibrosis newborn screening, maternal health — especially for women of color","Former board chair of Planned Parenthood of Illinois (reproductive rights)","Building a new south suburban airport as a top priority"]},
+{name:"Patty Garcia",state:"Illinois",district:"IL-04",party:"D",note:"Former chief of staff to retiring Rep. Jesús “Chuy” García",sig:"“Lower costs. Higher wages.”",points:["$25 federal minimum wage; expand the Child Tax Credit","Defend immigrant families: pathway to citizenship, Dreamer protections, abolish ICE","Medicare for All; PRO Act and union jobs over corporate giveaways; fund public schools; tax the wealthy their fair share"]},
+{name:"Melissa Bean †",state:"Illinois",district:"IL-08",party:"D",note:"Returning former member (served 2005–2011)",sig:"“Restoring the American Dream”",points:["Address housing, healthcare, energy, and education costs","Protect and strengthen the ACA (pre-existing conditions, extend premium tax credits), Medicare drug-price negotiation, reverse Medicaid cuts","Workers' rights and small business; immigration: voted for the DREAM Act; calls for DHS Secretary Noem's removal"]},
+{name:"Christina Bohannan",state:"Iowa",district:"IA-01",party:"D",note:"Law professor; beat Rep. Miller-Meeks in a third rematch — one of three Iowa flips",points:["Affordability and healthcare: reverse Medicaid cuts; fight expiration of ACA subsidies","Anti-corruption: attacked her opponent's pharmaceutical/insurance ties; argued Congress is ceding power to billionaires and corporations","Clean water quality"]},
+{name:"Lindsay James",state:"Iowa",district:"IA-02",party:"D",note:"State representative; open Hinson seat",points:["Healthcare costs at the center: warned ~25,000 district residents risk losing coverage under the 2025 “Big Beautiful Bill”","Affordability for everyday Iowans; clean water"]},
+{name:"Sarah Trone Garriott",state:"Iowa",district:"IA-03",party:"D",note:"State senator and Lutheran minister; beat Rep. Zach Nunn",points:["Healthcare: Medicaid covers 20% of Iowans and 40% of births; oppose Medicaid cuts and rural clinic closures","Reproductive care: opposes the six-week abortion ban; doctors, not hospital lawyers, should decide care","Clean water (nitrate pollution; Iowa's high cancer rates); attacked opponent over data-center tax breaks"]},
+{name:"Christina Hines",state:"Michigan",district:"MI-10",party:"D",note:"Former prosecutor; open John James seat",points:["Public safety record: led a Special Victims Unit; helped launch a restorative-justice diversion program","More moderate than her party on immigration — supports immigration controls","Note: platform sourcing here is thinner than most entries; coverage focused on her prosecutorial record"]},
+{name:"Denise Powell",state:"Nebraska",district:"NE-02",party:"D",note:"Founder of Women Who Run; open Bacon seat",first:"First Latina to represent Nebraska in Congress",points:["Protect Medicaid, Medicare, SNAP/CHIP, Social Security, and veterans' benefits","Defend public education; restore voting rights and the right to choose","Protect Nebraska's “Blue Dot” electoral vote; affordability for working Nebraskans"]},
+{name:"Teresa Benitez-Thompson",state:"Nevada",district:"NV-02",party:"D",note:"Former Assembly majority leader; open Amodei seat",points:["Affordability first; restore federal funds cut under the Trump administration/DOGE; workforce housing","Defend the ACA and Medicaid (including mental/behavioral health); protect reproductive freedom through federal legislation; drug-pricing transparency","Anti-corruption plan: ban stock trading by officials, close the lawmaker-to-lobbyist revolving door, end dark money; regulate AI-driven layoffs; protect public lands and water"]},
+{name:"Stefany Shaheen",state:"New Hampshire",district:"NH-01",party:"D",note:"Healthcare entrepreneur; daughter of Sen. Jeanne Shaheen; open Pappas seat",points:["Healthcare affordability as the cause of her campaign: Medicare for All and a public option; expand Medicare to dental/vision/hearing; stop drug companies charging Americans more than other countries; block AI from denying coverage; restore ACA tax credits","Housing affordability — “the single greatest issue facing New Hampshire”; childcare costs","Roll back and refund tariffs to small businesses; end the Iran war; lower energy costs"]},
+{name:"Rebecca Bennett",state:"New Jersey",district:"NJ-07",party:"D",note:"Former Navy helicopter/test pilot and healthcare executive; beat Rep. Tom Kean Jr.",points:["Affordability: fully restore the SALT deduction; expand affordable housing; paid family leave","Healthcare: public option (opposes Medicare for All), reverse the $1.2T in Medicaid/ACA cuts, childcare benefit capping family costs at 7% of income","All-of-the-above energy (renewables and nuclear); make data centers pay higher electricity rates; ban congressional stock trading; Gateway Tunnel and rail investment"]},
+{name:"Claire Valdez",state:"New York",district:"NY-07",party:"D",note:"DSA member; former union organizer and state assemblymember; succeeds Rep. Velázquez",points:["Medicare for All; abolish ICE; national/universal rent control","PRO Act and stronger labor protections; Green New Deal-style climate plan","Transgender Bill of Rights, Equality Act; end U.S. military aid to Israel"]},
+{name:"Darializa Avila Chevalier",state:"New York",district:"NY-13",party:"D",note:"DSA member; beat Rep. Adriano Espaillat in the primary",sig:"“Babies Not Bombs”",points:["Redirect military spending — including aid to Israel — to domestic priorities like childcare and healthcare","Medicare for All; abolish ICE; Palestinian rights"]},
+{name:"Cait Conley",state:"New York",district:"NY-17",party:"D",note:"Army veteran and former CISA election-security official; beat Rep. Mike Lawler, who conceded on election night — AP called it Nov. 5",points:["Affordability: middle-class tax relief, repeal tariffs, reinstate ACA tax credits, expand Medicare drug negotiation, public option, lower utility bills; data-center cost protections","Root out corruption: ban corporate PAC money, ban stock trading by Congress and the White House, term limits","Protect Medicare/Medicaid/Social Security; codify Roe v. Wade; rein in ICE (body cameras, no masked agents) while deporting violent criminals; opposes sanctuary cities"]},
+{name:"LaKesha Womack",state:"North Carolina",district:"NC-14",party:"D",note:"Business consultant; beat Rep. Tim Moore",points:["Healthcare as her top issue: public option, caps on out-of-pocket and prescription costs, strengthen the ACA, full funding for rural hospitals and community health centers","Raise the federal minimum wage; tax policies benefiting working- and middle-class households","Small-business capital via CDFIs; affordable-housing investment; public-education funding; congressional oversight and accountability"]},
+{name:"Kristina Knickerbocker",state:"Ohio",district:"OH-10",party:"D",note:"Air Force veteran and oncology nurse practitioner; beat Rep. Mike Turner",points:["“Healthcare is a right” — work toward universal coverage","Defend reproductive healthcare","Strengthen workers' rights and raise wages"]},
+{name:"Paige Cognetti",state:"Pennsylvania",district:"PA-08",party:"D",note:"Mayor of Scranton; beat Rep. Rob Bresnahan",points:["Populist anti-corruption platform: ban congressional stock trading and corporate PAC money","Restore healthcare access (ran against her opponent's Medicaid-cut vote); strengthen Medicare and Social Security","Support small businesses; expand education and job training; record of balancing Scranton's budget"]},
+{name:"Janelle Stelson",state:"Pennsylvania",district:"PA-10",party:"D",note:"Former TV anchor; beat Rep. Scott Perry in a rematch",points:["Lower costs: cut tariffs, no tax on tips/overtime, lower electric bills, cut wasteful spending","Healthcare: extend ACA credits, government drug-price negotiation, ban surprise bills, remove medical debt from credit reports; protect Social Security, Medicare, Medicaid","Codify abortion rights; anti-corruption: stock-trading ban, lifetime lobbying ban, six-term House limit; data centers subject to local veto and paying for infrastructure"]},
+{name:"Nancy Lacore",state:"South Carolina",district:"SC-01",party:"D",note:"Flipped the open seat Nancy Mace gave up; AP called it Nov. 6 after county certification (see SC spotlight)",points:["Affordability: lower housing costs (end tariffs on building materials; HELPER Act eliminating upfront costs for first responders/teachers), increase wages and small-business tax credits, cap childcare costs at 7% of family income","Healthcare: reverse Medicaid cuts, restore ACA subsidies, let Medicare negotiate drug prices, cap prescription costs, expand rural healthcare access","Secure border plus ICE oversight (body cameras, ban on masked agents); competitive pay and housing help for first responders; permanent ban on East Coast offshore drilling"]},
+{name:"Victoria Broderick",state:"Tennessee",district:"TN-04",party:"D",note:"Beat Rep. Scott DesJarlais",sig:"“Safety, Affordability, Freedom, and Equity”",points:["Medicare for All; stop premium increases; a hospital within every city/county","Raise the minimum wage; universal pre-K and childcare support","Bar corporations from buying single-family homes; term limits and removing money from politics"]},
+{name:"Jessica Steinmann",state:"Texas",district:"TX-08",party:"R",note:"Attorney and first-term Trump appointee; open Luttrell seat",points:["Finish the border wall, end catch-and-release, fight human trafficking","Cut taxes and regulations, simplify the tax code; American energy dominance; defend the Second Amendment","Strengthen the military, support veterans and law enforcement; pro-life (Texas Right to Life endorsement); opposed COVID vaccine mandates on religious-liberty grounds"]},
+{name:"Leticia Gutierrez",state:"Texas",district:"TX-09",party:"D",note:"Environmental advocate (Air Alliance Houston); AP called her race",points:["Rein in ICE: withhold further funding until reformed, body cameras and independent oversight, limits on enforcement at schools/hospitals/places of worship, end for-profit detention","Clean-air enforcement along the Houston Ship Channel; flood control, grid modernization, Port Houston investment","Lower grocery costs by cracking down on price-fixing and consolidation; expand the Child Tax Credit; universal pre-K; build affordable homes and stop Wall Street firms buying up neighborhoods"]},
+{name:"Katy Padilla Stout",state:"Texas",district:"TX-23",party:"D",note:"Rural healthcare was her signature issue",sig:"Plan for Rural Healthcare",points:["Increase funding for rural hospitals; recruit doctors, nurses, and hospital staff; expand rural community health centers","Lower prescription-drug costs and insurance premiums; restore Medicaid and Medicare funding — “affordable, quality care, no matter your ZIP code”","Note: platform sourcing beyond healthcare was thin in coverage found"]},
+{name:"Shannon Taylor",state:"Virginia",district:"VA-01",party:"D",note:"Henrico County prosecutor; beat Rep. Rob Wittman",points:["Anti-corruption: ban congressional stock trading, lifetime lobbying ban, 12-year term limits, minimum one-year jail for members who steal $10,000+ in public money, limit the presidential pardon power, end Citizens United","Affordability: rein in tariffs and “endless wars” driving up prices; working-family and small-business tax cuts","Restore ACA tax credits and Medicaid funding; expand Medicare drug negotiation; protect rural hospitals; data centers must not raise household energy costs"]},
+{name:"Elaine Luria †",state:"Virginia",district:"VA-02",party:"D",note:"Returning former Representative; beat Rep. Jen Kiggans",points:["Lower prices: repeal tariffs; reverse policies that raised energy costs; opposes the Iran war","Healthcare affordability plan: restore ACA subsidies, reverse Medicaid cuts, make more drugs eligible for Medicare negotiation","“Stand up to big data centers”; now supports members not owning/trading individual stocks"]},
+{name:"Amanda McKinney",state:"Washington",district:"WA-04",party:"R",note:"Yakima County commissioner and former banker; Trump-endorsed; open Newhouse seat — AP called the race Nov. 5",points:["“Common sense and local control”: cut federal regulation and give local communities more say over land and water decisions; more government transparency and accountability","Agriculture and water first: protect farm water rights, back water storage, and keep America feeding itself","Secure the border; American energy dominance (hydropower, nuclear, natural gas); defend the Second Amendment; protect women's sports and Title IX","No new taxes and tighter federal spending; on AI, favors guardrails that don't slow development"]},
+{name:"Rebecca Cooke",state:"Wisconsin",district:"WI-03",party:"D",note:"Farmer and former waitress; beat Rep. Derrick Van Orden on her third run",sig:"Five-point platform",points:["Lowering costs, combating corruption, bolstering agriculture, supporting small business, rebuilding the American dream","$15 federal minimum wage; expand Medicare to dental/hearing/vision; public health-insurance option; protect abortion rights","Farm agenda: right to repair farm equipment, farm bill for small and midsize operations, antitrust enforcement against Big Ag, open export markets instead of trade wars, pathway to citizenship for immigrant farm workers; teacher pay and Pell grants"]}
+];
+
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function partyLabel(p){return p==="D"?"Democrat":"Republican";}
+function cardHTML(p, office){
+  var meta='<span class="badge '+(p.party==="D"?"dem":"rep")+'">'+partyLabel(p.party)+'</span>';
+  meta+='<span class="tag">'+esc(p.state)+(p.district?" · "+esc(p.district):"")+'</span>';
+  if(p.seat) meta+='<span class="tag">'+esc(p.seat)+'</span>';
+  if(p.note) meta+='<span class="tag">'+esc(p.note)+'</span>';
+  var lis=p.points.map(function(x){return "<li>"+esc(x)+"</li>";}).join("");
+  var first=p.first?'<div class="first">★ Historic first — '+esc(p.first)+'</div>':"";
+  var sig=p.sig?'<div class="sig"><b>Signature:</b> '+esc(p.sig)+'</div>':"";
+  return '<article class="card" data-party="'+p.party+'" data-text="'+esc((p.name+" "+p.state+" "+(p.district||"")+" "+office+" "+p.points.join(" ")).toLowerCase())+'"><h3>'+esc(p.name)+'</h3><div class="meta">'+meta+'</div>'+first+'<ul>'+lis+'</ul>'+sig+'</article>';
+}
+function render(){
+  document.getElementById("senateGrid").innerHTML=SENATE.map(function(p){return cardHTML(p,"Senate");}).join("");
+  document.getElementById("govGrid").innerHTML=GOVS.map(function(p){return cardHTML(p,"Governor");}).join("");
+  document.getElementById("houseGrid").innerHTML=HOUSE.map(function(p){return cardHTML(p,"House");}).join("");
+}
+var party="all";
+function apply(){
+  var q=document.getElementById("q").value.trim().toLowerCase();
+  var total=0, shown=0;
+  document.querySelectorAll(".card").forEach(function(c){
+    total++;
+    var okParty=(party==="all"||c.getAttribute("data-party")===party);
+    var okQ=(!q||c.getAttribute("data-text").indexOf(q)>-1);
+    var ok=okParty&&okQ;
+    c.classList.toggle("hidden",!ok);
+    if(ok) shown++;
+  });
+  ["senateGrid","govGrid","houseGrid"].forEach(function(id){
+    var g=document.getElementById(id);
+    var any=false;
+    g.querySelectorAll(".card").forEach(function(c){if(!c.classList.contains("hidden"))any=true;});
+    g.classList.toggle("hidden",!any);
+    var sec=g.closest("section");
+    if(sec) sec.classList.toggle("hidden",!any);
+  });
+  document.getElementById("emptyState").classList.toggle("hidden",shown!==0);
+  document.getElementById("countLine").textContent="Showing "+shown+" of "+total+" women"+(party!=="all"?(" · "+(party==="D"?"Democrats":"Republicans")):"")+(q?(" · matching “"+q+"”"):"")+".";
+}
+render(); apply();
+document.getElementById("q").addEventListener("input",apply);
+document.querySelectorAll(".pbtn").forEach(function(b){
+  b.addEventListener("click",function(){
+    party=b.getAttribute("data-party");
+    document.querySelectorAll(".pbtn").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});
+    apply();
+  });
+});
+</script>
+</body>
+</html>
